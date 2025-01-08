@@ -1424,43 +1424,56 @@ ul.grid li a,ul.grid li img {
 }
 
 
-.videothumb {
-    display: inline-block;
-    width: 250px;
-    height: 150px;
-    margin: 10px;
-    border: 2px solid #ff57229a;
-    border-radius: 15px;
-    overflow: hidden;
-    background-position: center center;
-    background-size: cover;
+/* Style for video thumbnails */
+.video.thumb {
+    border: 3px solid #1E90FF; /* DodgerBlue border */
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden; /* Prevents content overflow */
+    position: relative; /* For overlay positioning */
+    box-shadow: 0 0 8px -1px #000; /* Matches existing shadow */
+    background-color: #fff; /* Ensures a white background */
 }
 
-.videothumb .overlay {
+.video.thumb video {
+    width: 100%; /* Ensures video fits container */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes bottom whitespace */
+    border-radius: 15px; /* Matches container's rounded corners */
+}
+
+/* Overlay styling */
+.video.thumb .imageoverlay {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 40%;
-    color: #fff;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.videothumb .overlay h1 {
-    font-size: 20px;
-    margin: 0;
+.video.thumb:hover .imageoverlay {
+    opacity: 1; /* Show overlay on hover */
 }
 
-.videothumb .play-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 50px;
+.video.thumb .imageoverlay i {
+    font-size: 2em;
     color: #fff;
-    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.video.thumb:hover .imageoverlay i {
+    transform: scale(1.2); /* Slightly enlarge icon on hover */
+}
+
+/* Ensure images and videos align within the grid */
+ul.grid li > div {
+    box-shadow: 0 0 8px -1px #000;
+    overflow: hidden;
+    position: relative;
+    border: none; /* Remove existing border to avoid conflict */
 }
