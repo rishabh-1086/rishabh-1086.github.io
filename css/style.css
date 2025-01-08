@@ -1426,7 +1426,7 @@ ul.grid li a,ul.grid li img {
 
 /* Style for video thumbnails */
 .video.thumb {
-    border: 3px solid #ff57229a; /* DodgerBlue border */
+    border: 2px solid #ff57229a; /* DodgerBlue border */
     border-radius: 15px; /* Rounded corners */
     overflow: hidden; /* Prevents content overflow */
     position: relative; /* For overlay positioning */
