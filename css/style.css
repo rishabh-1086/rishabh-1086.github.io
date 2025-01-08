@@ -1465,3 +1465,11 @@ ul.grid li a,ul.grid li img {
     opacity: 0.8;
 }
 
+
+/* Ensure images and videos align within the grid */
+ul.grid li > div {
+    box-shadow: 0 0 8px -1px #000;
+    overflow: hidden;
+    position: relative;
+    border: none; /* Remove existing border to avoid conflict */
+}
