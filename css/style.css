@@ -1424,3 +1424,32 @@ ul.grid li a,ul.grid li img {
 }
 
 
+.video.thumb {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 100%; /* Ensures it doesn't overflow */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for aesthetics */
+}
+
+.video.thumb video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.videooverlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    pointer-events: none; /* Ensures the overlay doesn't block video controls */
+}
+
+.video.thumb:hover .videooverlay {
+    opacity: 1;
+}
