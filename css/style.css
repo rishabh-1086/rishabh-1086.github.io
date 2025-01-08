@@ -1426,8 +1426,6 @@ ul.grid li a,ul.grid li img {
 
 .videothumb {
     display: inline-block;
-    width: 250px;
-    height: 150px;
     margin: 10px;
     border: 2px solid #ff57229a;
     border-radius: 15px;
