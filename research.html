@@ -511,36 +511,39 @@ performance over many state-of-the-art IL algorithms.
                                             <li>
                                                 <div class="row">
                                                     <div class="col-sm-4 col-md-3">
-                                                        <div class="image thumb">
-                                                            <img alt="scenario-generation" src="images/research/lidar-optimization-teaser.png" class="img-responsive">
-                                                            <div class="imageoverlay">
-                                                                <i class="fa fa-search"></i>
+                                                        <div class="video thumb">
+                                                            <video class="responsive-video" controls>
+                                                                <source src="videos/FrankaKitchen.mp4" type="video/mp4">
+                                                                Your browser does not support the video tag.
+                                                            </video>
+                                                            <div class="videooverlay">
+                                                                <i class="fa fa-play-circle"></i>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-8 col-md-9" style="margin-left: -30px;">
                                                         <div class="meta">
-                                                            <h3>Min-max Optimization of a LiDAR Sensor</h3>
-                                                            <p> CARLA simulator, Weighted convex optimization, Object detection.
+                                                            <h3>Action-Quantized Offline Reinforcement Learning</h3>
+                                                            <p> Leveraged VQ-VAE (Vector Quantised-Variational AutoEncoder) for state-conditioned action quantization (SAQ),
+addressing the challenges of approximation in continuous action settings, which typically lead to performance
+degradation. Extended this approach to enable joint end-to-end learning of quantization and policy, resulting in
+approximately 20% performance improvements on locomotion, adroit, and kitchen tasks.
                                                             </p>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="details" style="padding-bottom: 2%;">
                                                     <p>
-                                                        <strong>Abstract</strong>: A LiDAR provides accurate 3D views and precise distance measurements under uncertain driving conditions. 
-                                                        However, its implementation remains costly. To tackle this issue an effort to maximize the utility of the LiDAR is made. 
-                                                        Since, at a high-level, the task of a LiDAR is to detect objects, an easy-to-evaluate cost function which minimizes the maximally 
-                                                        undetected subspace is used. Different LiDAR configurations in the CARLA simulator are used and for each, depth camera images are 
-                                                        converted to LiDAR point clouds since CARLA’s LiDARs are not accurate. The perception area is used to construct a design procedure 
-                                                        to solve the optimization problem described above based on weighted region of interests around the vehicle. The weighted regions are 
-                                                        obtained when a subspace cuts a cube and the cube’s weight is incremented by 1. Now, the task becomes to maximize for all LiDAR 
-                                                        configurations and find the optimum for a particular number of LiDARs.
-                                                    </p>
+                                                        <strong>Abstract</strong>: The field of offline reinforcement learning (RL) offers a versatile framework for transforming fixed behavior datasets into policies that have the potential to surpass the performance of the original data-collecting policy. Despite significant advancements like adding conservatism and policy constraints to address distributional shifts, continuous action settings often pose challenges that necessitate approximations. In contrast, discrete action settings offer more precise or even exact computations for offline RL constraints and regularizers, presenting fewer hurdles. Our project begins with an exploration of an adaptive method for action quantization. Utilizing a VQ-VAE, we acquire knowledge in state-conditioned action quantization to address the exponential complexity inherent in naive action space discretization. Through experimentation, we reproduce that integrating this discretization technique strengthens the effectiveness of well-known offline RL approaches such as IQL and CQL on standardized tasks. We subsequently refine this methodology through joint training of VQ-VAE and offline RL methods, resulting in further performance enhancements compared to previous methodology.
                                                     <p>
-                                                        <img alt="scenario-generation" src="images/research/lidar-optimization-1.png" 
+                                                        <img alt="scenario-generation" src="images/research/SAQ_Alternating.png" 
                                                              class="img-responsive" style="scale: 0.8; display: block; margin: 0 auto;">
                                                     </p>
+                                                    <p>
+                                                        <img alt="scenario-generation" src="images/research/SAQ_Joint.png" 
+                                                             class="img-responsive" style="scale: 0.8; display: block; margin: 0 auto;">
+                                                    </p>
+
 
                                                 </div>
                                             </li>
