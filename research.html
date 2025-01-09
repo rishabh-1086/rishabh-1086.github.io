@@ -592,7 +592,7 @@ approximately 20% performance improvements on locomotion, adroit, and kitchen ta
                                                 <div class="row">
                                                     <div class="col-sm-4 col-md-3">
                                                         <div class="image thumb" style="padding:0px;">
-                                                            <img alt="image" src="images/research/inverse-kinematics-teaser.png" 
+                                                            <img alt="image" src="images/research/Earthquake.jpeg" 
                                                             style="height: inherit; border-radius: inherit;" class="img-responsive">
                                                             <div class="imageoverlay">
                                                                 <i class="fa fa-search"></i>
@@ -602,32 +602,33 @@ approximately 20% performance improvements on locomotion, adroit, and kitchen ta
                                                     </div>
                                                     <div class="col-sm-8 col-md-9" style="margin-left: -30px;">
                                                         <div class="meta">
-                                                            <h3>Inverse Kinematic Algorithms for Spatially Hyper Redundant Bodies</h3>
-                                                            <p> Metaheuristic optimization, inverse kinematics, Closed-loop control algorithm design. </p>
+                                                            <h3>Earthquake Damage Prediction</h3>
+                                                            <p> Predicted building damage levels using data from the 2015 Gorkha earthquake in Nepal. Employed feature engineering
+and ensemble modeling with LightGBM, CatBoost, and XGBoost to develop a machine learning model, achieving an
+F1−score of 0.7541 on test data and securing 2nd place out of 50 teams. [<a href="https://github.com/rishabh-1086/Earthquake-Damage-Prediction" target="_blank">code</a>]
+                                                            </p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="details">
+                                                <div class="details" style="padding-bottom: 2%;">
                                                     <p>
-                                                        <strong>Abstract</strong>: Spatially hyper redundant systems have more number of controllable Degrees of Freedom (DOF) as compared 
-                                                        to their actual DOF. These systems have infinite number of solutions for a given state space reach making it complex to develop proper 
-                                                        inverse kinematic solution. Adapting the optimization methods only help to arrive at the promising Inverse Kinematic (IK) solution. 
-                                                        The second part of the project involves implementation and simulation of computed torque control method for a 2-DOF manipulator 
-                                                        sing MATLAB/Simulink. Computed Torque Control is a powerful non-linear controller which uses feedback linearisation to compute 
-                                                        the required arm torques required for movement. The robot model is designed using the SimMechanics library of Simulink.
+                                                        <strong>Abstract</strong>: Predicting the damage caused by an earthquake is a challenging task. Given an extensive dataset comprised of aspects of building location and construction, we predict the damage level caused to buildings. The data is from the 2015 Gorkha earthquake in Nepal. We make use of feature engineering techniques, gradient boosting algorithms and ensemble models to develop our machine learning model, which achieved an F1 score of 0.7541 on test data.                                                    
                                                     </p>
                                                     <p>
-                                                        <img alt="scenario-generation" src="images/research/inverse-kinematics-1.png" 
-                                                             class="img-responsive" style="display: block; margin: 20px auto; width: 40%; ">
+                                                        <img alt="scenario-generation" src="images/research/MajorityVote.png" 
+                                                             class="img-responsive" style="scale: 0.8; display: block; margin: 0 auto;">
                                                     </p>
+                                    
+
+
                                                 </div>
                                             </li>
-
+                                            
                                             <li>
                                                 <div class="row">
                                                     <div class="col-sm-4 col-md-3">
                                                         <div class="image thumb" style="padding:0px;">
-                                                            <img alt="image" src="images/research/prosthetic-knee-teaser.png" 
+                                                            <img alt="image" src="images/research/Data_Augmentation.jpg" 
                                                             style="height: inherit; border-radius: inherit;" class="img-responsive">
                                                             <div class="imageoverlay">
                                                                 <i class="fa fa-search"></i>
@@ -637,25 +638,20 @@ approximately 20% performance improvements on locomotion, adroit, and kitchen ta
                                                     </div>
                                                     <div class="col-sm-8 col-md-9" style="margin-left: -30px;">
                                                         <div class="meta">
-                                                            <h3>Galerkin Finite Element Analysis of Below-knee Prosthesis</h3>
-                                                            <p> Crank-Nicolson scheme, weak Galerkin, Stress analysis. </p>
+                                                            <h3>Application of r-cyclic matrices in Data Augmentation</h3>
+                                                            <p> Proposed a data augmentation algorithm to counter the problem of data insufficiency with the objective of preserving
+covariance post augmentation. Provided a heuristics to convert the involved exponential time complexity into polynomial
+time complexity. Formulated an optimization problem motivated by the approach used in ν-SVR. Experimented on
+various UCI data sets using multiple classification algorithms to outline the effectiveness of the proposed work. 
+                                                            </p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="details">
+                                                <div class="details" style="padding-bottom: 2%;">
                                                     <p>
-                                                        <strong>Abstract</strong>: This study aims to identify the best possible material for production of liners for prosthetic limbs. 
-                                                        Based on the standard Galerkin finite element method in space and Crank-Nicolson difference method in time, the semi-discrete 
-                                                        and fully discrete systems are constructed. The code is written in C++ and MATLAB, and deformation plots of different loading 
-                                                        conditions for different materials are analyzed. The code is a general approach written for a (n x m) meshing domain and can be 
-                                                        refined as per the user preference based on the desired accuracy. The code was validated with simulations on ANSYS Static 
-                                                        Structural providing a green signal for further research. Further work to incorporate the nonlinear constitutive behavior of 
-                                                        silicone will be done to test whether silicone is really the best economic material in the market available.
+                                                        <strong>Abstract</strong>: An efficient data augmentation algorithm generates samples that improves accuracy and robustness of training models. Augmentation with informative samples imparts meaning to the augmented data set. In this paper, we propose CoPASample (Covariance Preserving Algorithm for generating Samples), a data augmentation algorithm that generates samples which reflects the first and second order statistical information of the data set, thereby augmenting the data set in a manner that pre- serves the total covariance of the data. To address the issue of exponential computations in the generation of points for augmentation, we formu- late an optimisation problem motivated by the approach used in ν-SVR to iteratively compute a heuristics based optimal set of points for aug- mentation in polynomial time. Experimental results for several data sets and comparisons with other data augmentation algorithms validate the potential of our proposed algorithm.
                                                     </p>
-                                                    <p>
-                                                        <img alt="scenario-generation" src="images/research/prosthetic-knee-1.png" 
-                                                             class="img-responsive" style="display: block; margin: 20px auto; width: 30%; ">
-                                                    </p>
+
                                                 </div>
                                             </li>
                                         
