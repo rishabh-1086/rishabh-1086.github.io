@@ -39,26 +39,86 @@
     });
   }
 
-  /* ---- News: show all ---- */
-  function bindNews() {
-    var btn = document.querySelector(".news-toggle");
-    if (!btn) return;
-    btn.addEventListener("click", function () {
-      var hidden = document.querySelectorAll(".timeline .tl.hidden");
-      hidden.forEach(function (el) { el.classList.remove("hidden"); });
-      btn.remove();
+  /* ---- News: fade out the bottom gradient + hint when scrolled to the end ---- */
+  function bindNewsScroll() {
+    var wrap = document.querySelector(".news-wrap");
+    var scroller = wrap && wrap.querySelector(".news-scroll");
+    if (!wrap || !scroller) return;
+    function update() {
+      var atEnd = scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 6;
+      wrap.classList.toggle("at-end", atEnd);
+    }
+    scroller.addEventListener("scroll", update, { passive: true });
+    update();
+  }
+
+  /* ---- Email: click to copy address ---- */
+  function bindCopy() {
+    document.querySelectorAll(".email-copy").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var text = btn.getAttribute("data-copy");
+        var done = function () {
+          btn.classList.add("copied");
+          var hint = btn.querySelector(".copy-hint");
+          var prev = hint ? hint.textContent : "";
+          if (hint) hint.textContent = "Copied";
+          setTimeout(function () {
+            btn.classList.remove("copied");
+            if (hint) hint.textContent = prev || "Copy";
+          }, 1600);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(function () {});
+        } else {
+          var ta = document.createElement("textarea");
+          ta.value = text; document.body.appendChild(ta); ta.select();
+          try { document.execCommand("copy"); done(); } catch (e) {}
+          document.body.removeChild(ta);
+        }
+      });
     });
+  }
+
+  /* ---- Visitor counter ----
+     Uses a free, no-signup counter API. To swap providers (e.g. GoatCounter),
+     change NAMESPACE/KEY/ENDPOINT below; the element hides itself if the
+     service is unreachable so nothing ever looks broken. */
+  function bindCounter() {
+    var el = document.querySelector("[data-visits]");
+    if (!el) return;
+    var wrap = el.closest(".visits");
+    var NAMESPACE = "rishabh-1086";
+    var KEY = "portfolio";
+    var base = "https://api.counterapi.dev/v1/" + NAMESPACE + "/" + KEY;
+
+    var counted = false;
+    try { counted = sessionStorage.getItem("rv_counted") === "1"; } catch (e) {}
+    var url = counted ? base + "/" : base + "/up";
+
+    fetch(url, { cache: "no-store" })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        var n = d && (d.count != null ? d.count : d.value);
+        if (n == null || isNaN(n)) throw new Error("bad payload");
+        el.textContent = Number(n).toLocaleString();
+        if (wrap) wrap.classList.add("is-ready");
+        try { sessionStorage.setItem("rv_counted", "1"); } catch (e) {}
+      })
+      .catch(function () { /* leave hidden — never show a broken widget */ });
   }
 
   /* ---- Footer year ---- */
   function bindYear() {
-    var y = document.querySelector("[data-year]");
-    if (y) y.textContent = new Date().getFullYear();
+    document.querySelectorAll("[data-year]").forEach(function (y) {
+      y.textContent = new Date().getFullYear();
+    });
   }
 
+  function init() {
+    bindTheme(); bindReveal(); bindNewsScroll();
+    bindCopy(); bindCounter(); bindYear();
+  }
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", function () {
-      bindTheme(); bindReveal(); bindNews(); bindYear();
-    });
-  } else { bindTheme(); bindReveal(); bindNews(); bindYear(); }
+    document.addEventListener("DOMContentLoaded", init);
+  } else { init(); }
 })();
