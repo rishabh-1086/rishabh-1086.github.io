@@ -595,14 +595,19 @@ details.pub__abs p {
 }
 .news-wrap.at-end::after { opacity: 0; }
 
-/* ---- Site footer + visitor counter ---- */
+/* ---- Site footer + visitor map ---- */
 .sitefoot {
-  margin-top: 44px; padding-top: 22px;
+  margin-top: 52px; padding-top: 28px;
   border-top: 1px solid var(--line);
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 16px; flex-wrap: wrap;
-  font: 400 12px/1.5 var(--mono);
-  letter-spacing: .01em; color: var(--muted);
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 28px 36px; flex-wrap: wrap;
+}
+.sitefoot__left {
+  display: flex; flex-direction: column; gap: 6px;
+  font: 400 12px/1.55 var(--mono); letter-spacing: .01em; color: var(--muted);
+}
+.sitefoot__name {
+  font: 500 14px/1 var(--serif); letter-spacing: .005em; color: var(--ink-2);
 }
 .visits {
   display: none; align-items: center; gap: 8px;
@@ -643,7 +648,6 @@ details.pub__abs p {
 
 @media (max-width: 560px) {
   .news-scroll { max-height: 440px; }
-  .sitefoot { font-size: 11px; }
 }
 
 /* ---- Diagram/figure thumbnails (SVG): show whole figure, no crop ---- */
@@ -652,8 +656,22 @@ details.pub__abs p {
 html[data-theme="dark"] .pub__media.fig, html[data-theme="dark"] .rpub__media.fig { background: #f3f1ec; }
 
 /* ---- Visitor map (MapMyVisitors / ClustrMaps widget) ---- */
-.vmap { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
-.vmap__label { font: 500 10px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
-.vmap__box { min-height: 76px; display: block; width: 200px; }
-.vmap__box img { border-radius: 8px; border: 1px solid var(--line); display: block; }
-@media (max-width: 560px) { .vmap { align-items: flex-start; } }
+.vmap { display: flex; flex-direction: column; align-items: flex-end; gap: 11px; }
+.vmap__label {
+  display: inline-flex; align-items: center; gap: 7px;
+  font: 500 10px/1 var(--mono); letter-spacing: .16em; text-transform: uppercase;
+  color: var(--accent);
+}
+.vmap__label svg { width: 13px; height: 13px; }
+.vmap__box {
+  width: 236px; min-height: 120px; padding: 10px;
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 14px; box-shadow: var(--shadow);
+  display: grid; place-items: center; overflow: hidden;
+}
+.vmap__box a, .vmap__box img { display: block; max-width: 100%; height: auto; border: 0; border-radius: 8px; }
+@media (max-width: 640px) {
+  .sitefoot { flex-direction: column-reverse; align-items: flex-start; gap: 24px; }
+  .vmap { align-items: flex-start; }
+  .vmap__box { width: 100%; max-width: 320px; }
+}
