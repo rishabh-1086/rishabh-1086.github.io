@@ -645,3 +645,15 @@ details.pub__abs p {
   .news-scroll { max-height: 440px; }
   .sitefoot { font-size: 11px; }
 }
+
+/* ---- Diagram/figure thumbnails (SVG): show whole figure, no crop ---- */
+.pub__media.fig, .rpub__media.fig { background: #FBFAF7; }
+.pub__media.fig img, .rpub__media.fig img { object-fit: contain; }
+html[data-theme="dark"] .pub__media.fig, html[data-theme="dark"] .rpub__media.fig { background: #f3f1ec; }
+
+/* ---- Visitor map (MapMyVisitors / ClustrMaps widget) ---- */
+.vmap { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.vmap__label { font: 500 10px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.vmap__box { min-height: 76px; display: block; }
+.vmap__box img { border-radius: 8px; border: 1px solid var(--line); display: block; }
+@media (max-width: 560px) { .vmap { align-items: flex-start; } }
