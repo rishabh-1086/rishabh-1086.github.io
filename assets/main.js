@@ -116,7 +116,7 @@
 
   function init() {
     bindTheme(); bindReveal(); bindNewsScroll();
-    bindCopy(); bindCounter(); bindYear();
+    bindCopy(); bindYear();
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
