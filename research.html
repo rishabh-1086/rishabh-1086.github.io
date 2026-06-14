@@ -81,8 +81,10 @@
 
     <header class="page-head reveal">
       <span class="section__eyebrow">Research</span>
+      <!-- 
       <h2>Learning to act from data — and to stay reliable when the world shifts.</h2>
-      <p>I work on reinforcement and imitation learning, with an emphasis on the strictly offline setting and on learning from rich feedback: building competent, robust policies from fixed data without further interaction. Below are my publications, patents, and selected projects.</p>
+      -->
+      <p>I develop learning algorithms that enable AI agents to acquire robust decision-making capabilities from fixed data and rich feedback. My research spans reinforcement learning, imitation learning, foundation models, and AI agents, with a focus on building competent, trustworthy, and generalizable policies without additional environment interaction. By combining theoretical foundations with scalable algorithms, I aim to create autonomous systems that can learn safely and efficiently from demonstrations, preferences, natural language feedback, and large-scale datasets. Below are my publications, patents, and selected projects.</p>
       <div class="tags" style="margin-top:18px">
         <span class="tag">Reinforcement Learning</span>
         <span class="tag">Imitation Learning</span>
@@ -99,14 +101,14 @@
       <article class="rpub reveal">
         <div class="rpub__media fig"><img src="images/research/distil.svg" alt="DistIL: distributional DAgger with future-aware credit assignment" loading="lazy"></div>
         <div>
-          <div class="rpub__venue"><span class="oral">NEW</span> ICML 2026 · RLxF Workshop · arXiv</div>
+          <div class="rpub__venue"><span class="oral">NEW</span> RLxF Workshop · ICML 2026 </div>
           <h4 class="rpub__title">Reinforcement Learning from Rich Feedback with Distributional DAgger</h4>
           <p class="rpub__authors"><b>Rishabh Agrawal</b>, Jacob Fein-Ashley, Paria Rashidinejad</p>
           <div class="rpub__links">
             <a class="chip" href="https://arxiv.org/pdf/2606.05152" target="_blank" rel="noopener">PDF</a>
             <a class="chip" href="https://rishabh-1086.github.io/project-distIL/" target="_blank" rel="noopener">Project page</a>
             <a class="chip" href="https://github.com/rishabh-1086/distIL" target="_blank" rel="noopener">Code</a>
-            <a class="chip" href="https://sites.google.com/view/rlxf-icml2026" target="_blank" rel="noopener">Workshop</a>
+            <!--<a class="chip" href="https://sites.google.com/view/rlxf-icml2026" target="_blank" rel="noopener">Workshop</a>-->
           </div>
           <details class="rpub__abs"><summary>Abstract</summary><p>Reasoning models have advanced quickly, but the dominant RL-from-verifiable-rewards (RLVR) recipe stays narrow: sample many responses and reward each with a single correctness bit. Many settings, though, provide far richer feedback — execution traces, tool outputs, expert corrections, and self-evaluations. We use such feedback through DistIL, a distributional variant of the classic DAgger algorithm in which the learner has local access to an expert distribution over the states its current policy visits. This yields a simple forward cross-entropy objective that admits a black-box expert and whose sequence-level gradient propagates future expert–student disagreement back to earlier decisions. We show that prior self-distillation objectives based on reverse-KL or Jensen–Shannon do not guarantee monotonic policy improvement, whereas forward cross-entropy does — and additionally enjoys regret guarantees and optimizes a lower bound on teacher-weighted likelihood of success, improving Pass@N. Empirically, DistIL improves over RLVR and self-distillation baselines across scientific reasoning, coding, and hard mathematics.</p></details>
         </div>
@@ -120,7 +122,7 @@
           <p class="rpub__authors"><b>Rishabh Agrawal</b>, Rahul Jain, Ashutosh Nayyar</p>
           <div class="rpub__links">
             <a class="chip" href="https://arxiv.org/pdf/2605.17017" target="_blank" rel="noopener">PDF</a>
-            <a class="chip" href="https://arxiv.org/abs/2605.17017" target="_blank" rel="noopener">arXiv</a>
+            <!--<a class="chip" href="https://arxiv.org/abs/2605.17017" target="_blank" rel="noopener">arXiv</a>-->
           </div>
           <details class="rpub__abs"><summary>Abstract</summary><p>Behavior Foundation Models (BFMs) enable scalable imitation learning by pretraining task-agnostic representations that adapt rapidly to new tasks — but existing BFMs assume fixed dynamics, limiting robustness under real-world shifts such as changes in friction, actuation, or sensor noise. We formulate BFM task inference as a robust minimax optimization over an uncertainty set of dynamics, enabling adaptation to worst-case perturbations without touching pretraining. To our knowledge this is the first BFM framework robust to dynamics shifts while using only offline data from a single nominal environment. Two variants, RBFM-Light and RBFM-Heavy, trade computation against robustness while preserving fast task inference, and both significantly outperform standard BFM and robust offline IL baselines under dynamics shifts.</p></details>
         </div>
@@ -133,8 +135,8 @@
           <h4 class="rpub__title">Balance Equation-based Distributionally Robust Offline Imitation Learning</h4>
           <p class="rpub__authors"><b>Rishabh Agrawal</b>, Yusuf Alvi, Rahul Jain, Ashutosh Nayyar</p>
           <div class="rpub__links">
-            <a class="chip" href="https://openreview.net/pdf?id=rkUrkqEKZE" target="_blank" rel="noopener">PDF</a>
-            <a class="chip" href="https://arxiv.org/pdf/2511.07942" target="_blank" rel="noopener">arXiv</a>
+            <a class="chip" href="https://arxiv.org/pdf/2511.07942" target="_blank" rel="noopener">PDF</a>
+            <!--<a class="chip" href="https://arxiv.org/pdf/2511.07942" target="_blank" rel="noopener">arXiv</a>-->
             <a class="chip" href="https://drive.google.com/file/d/18N2SxQt2KH1-woaaxWRmWElP4vXIaXfo/view?usp=sharing" target="_blank" rel="noopener">Oral talk</a>
           </div>
           <details class="rpub__abs"><summary>Abstract</summary><p>Standard imitation learning implicitly assumes environment dynamics remain fixed between training and deployment — an assumption that rarely holds, since modeling inaccuracies, parameter variation, and adversarial perturbations all shift transition dynamics and degrade performance. We learn robust policies from expert demonstrations collected under nominal dynamics alone, formulating the problem as a distributionally robust optimization over an uncertainty set of transition models. Crucially, we show this worst-case objective can be reformulated entirely in terms of the nominal data distribution, enabling tractable offline learning. On continuous-control benchmarks, the approach achieves superior robustness and generalization over state-of-the-art offline IL baselines, especially under perturbed or shifted environments.</p></details>
@@ -148,8 +150,7 @@
           <h4 class="rpub__title">Towards Offline Imitation Learning: Strictly Batch Settings, Generalization, and Variability in Expertise</h4>
           <p class="rpub__authors"><b>Rishabh Agrawal</b></p>
           <div class="rpub__links">
-            <a class="chip" href="https://ojs.aaai.org/index.php/AAAI/article/view/42139" target="_blank" rel="noopener">AAAI</a>
-            <a class="chip" href="https://doi.org/10.1609/aaai.v40i48.42139" target="_blank" rel="noopener">DOI</a>
+            <a class="chip" href="https://ojs.aaai.org/index.php/AAAI/article/view/42139" target="_blank" rel="noopener">PDF</a>
           </div>
           <details class="rpub__abs"><summary>Abstract</summary><p>My doctoral research develops a unified framework for offline imitation learning that tackles three challenges: sample efficiency in strictly batch settings, robustness and generalization under dynamics shifts, and learning from demonstrations of varying quality. At its core is a paradigm for strictly offline IL based on enforcing the Markov Balance Equation, realized through conditional density estimation in the CKIL and MBIL algorithms. Building on this, I developed the first distributionally robust offline IL framework under a stationarity constraint, and now extend it through Robust Behavior Foundation Models that generalize across dynamics shifts. Finally, I propose a variational approach for learning from crowdsourced demonstrations by inferring demonstrator expertise — together broadening the applicability of IL to robotics, healthcare, and autonomous systems.</p></details>
         </div>
@@ -161,7 +162,7 @@
           <div class="rpub__venue">AAAI 2025</div>
           <h4 class="rpub__title">Markov Balance Satisfaction Improves Performance in Strictly Batch Offline Imitation Learning</h4>
           <p class="rpub__authors"><b>Rishabh Agrawal</b>, Nathan Dahlin, Rahul Jain, Ashutosh Nayyar</p>
-          <div class="rpub__links"><a class="chip" href="https://arxiv.org/pdf/2408.09125" target="_blank" rel="noopener">arXiv</a></div>
+          <div class="rpub__links"><a class="chip" href="https://arxiv.org/pdf/2408.09125" target="_blank" rel="noopener">PDF</a></div>
           <details class="rpub__abs"><summary>Abstract</summary><p>We address imitation where the learner relies solely on observed behavior, with no environment interaction, no supplementary datasets beyond the expert's, and no knowledge of transition dynamics — a more constrained and realistic setting than most SOTA IL methods assume. Our method uses the Markov balance equation and introduces a conditional density estimation framework, employing conditional normalizing flows for transition dynamics estimation to satisfy a balance equation for the environment. Across Classic Control and MuJoCo, it consistently outperforms many state-of-the-art IL algorithms.</p></details>
         </div>
       </article>
@@ -194,7 +195,7 @@
           <div class="rpub__venue">IEEE Globecom 2020</div>
           <h4 class="rpub__title">A Reinforcement Learning Framework for QoS-Driven Radio Resource Scheduler</h4>
           <p class="rpub__authors">Jitender Singh Shekhawat, <b>Rishabh Agrawal</b>, K. Gautam Shenoy, Rajath Shashidhara</p>
-          <div class="rpub__links"><a class="chip" href="https://ieeexplore.ieee.org/document/9322182" target="_blank" rel="noopener">IEEE</a></div>
+          <div class="rpub__links"><a class="chip" href="https://ieeexplore.ieee.org/document/9322182" target="_blank" rel="noopener">PDF</a></div>
           <details class="rpub__abs"><summary>Abstract</summary><p>In cellular systems the MAC scheduler allocates radio resources to meet each flow's quality-of-service requirements while maximizing throughput and fairness — a delicate balance traditionally struck with hand-crafted, carefully tuned metrics that 5G's diverse QoS needs further complicate. We propose a reinforcement learning scheduler that learns an allocation policy to jointly optimize multiple objectives, letting operators express priorities per QoS class. A flexible neural architecture adapts to varying numbers of flows, simplifying training and making it viable for constrained systems. In simulation it outperforms conventional heuristics such as M-LWDF, EXP-RULE, and LOG-RULE and stays robust to changes in radio environment and traffic.</p></details>
         </div>
       </article>
@@ -205,7 +206,7 @@
           <div class="rpub__venue">LOD 2019</div>
           <h4 class="rpub__title">CoPASample: A Heuristics Based Covariance Preserving Data Augmentation</h4>
           <p class="rpub__authors"><b>Rishabh Agrawal</b>, Paridhi Kothari</p>
-          <div class="rpub__links"><a class="chip" href="https://link.springer.com/chapter/10.1007/978-3-030-37599-7_26" target="_blank" rel="noopener">Springer</a></div>
+          <div class="rpub__links"><a class="chip" href="https://link.springer.com/chapter/10.1007/978-3-030-37599-7_26" target="_blank" rel="noopener">PDF</a></div>
           <details class="rpub__abs"><summary>Abstract</summary><p>Effective data augmentation generates samples that improve a model's accuracy and robustness. We propose CoPASample, an algorithm that generates samples reflecting the first- and second-order statistics of the dataset, augmenting it while preserving total covariance. To avoid the exponential cost of generating augmentation points, we formulate an optimization problem motivated by the ν-SVR approach to iteratively compute a heuristic-based optimal set of points in polynomial time. Experiments across several datasets, with comparisons to other augmentation methods, validate the approach.</p></details>
         </div>
       </article>
@@ -216,7 +217,7 @@
           <div class="rpub__venue">FUZZ-IEEE 2018</div>
           <h4 class="rpub__title">Determining the Optimal Fuzzifier Range for Alpha-Planes of General Type-2 Fuzzy Sets</h4>
           <p class="rpub__authors">Shreyas Kulkarni, <b>Rishabh Agrawal</b>, Frank Chung-Hoon Rhee</p>
-          <div class="rpub__links"><a class="chip" href="https://ieeexplore.ieee.org/document/8491556" target="_blank" rel="noopener">IEEE</a></div>
+          <div class="rpub__links"><a class="chip" href="https://ieeexplore.ieee.org/document/8491556" target="_blank" rel="noopener">PDF</a></div>
           <details class="rpub__abs"><summary>Abstract</summary><p>The fuzzifier parameter strongly shapes the final cluster partitions in fuzzy c-means and its interval and general type-2 variants, yet is usually chosen by experience. We adaptively compute suitable fuzzifier ranges for each α-plane of a general type-2 fuzzy set for a given dataset, deriving the footprint of uncertainty per α-plane via histogram-based membership generation and iterating to converged fuzzifier values. Experiments on several datasets validate the method's effectiveness.</p></details>
         </div>
       </article>
@@ -278,7 +279,7 @@
       <article class="rpub reveal">
         <div class="rpub__media"><img src="images/research/Earthquake.jpeg" alt="Earthquake damage prediction" loading="lazy"></div>
         <div>
-          <div class="rpub__venue">Gradient Boosting · 2nd / 50</div>
+          <div class="rpub__venue">Gradient Boosting · Ensemble</div>
           <h4 class="rpub__title">Earthquake Damage Prediction</h4>
           <p class="rpub__authors">Feature engineering and ensembling (LightGBM, CatBoost, XGBoost); F1 = 0.7541, 2nd of 50 teams.</p>
           <div class="rpub__links"><a class="chip" href="https://github.com/rishabh-1086/Earthquake-Damage-Prediction" target="_blank" rel="noopener">Code</a></div>
