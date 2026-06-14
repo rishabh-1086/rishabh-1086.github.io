@@ -654,6 +654,6 @@ html[data-theme="dark"] .pub__media.fig, html[data-theme="dark"] .rpub__media.fi
 /* ---- Visitor map (MapMyVisitors / ClustrMaps widget) ---- */
 .vmap { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
 .vmap__label { font: 500 10px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
-.vmap__box { min-height: 76px; display: block; }
+.vmap__box { min-height: 76px; display: block; width: 200px; }
 .vmap__box img { border-radius: 8px; border: 1px solid var(--line); display: block; }
 @media (max-width: 560px) { .vmap { align-items: flex-start; } }
