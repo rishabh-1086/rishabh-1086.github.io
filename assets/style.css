@@ -144,7 +144,6 @@ a { color: inherit; }
   margin: 0 0 10px;
   color: var(--ink);
 }
-.identity h1 em { font-style: italic; }
 .role {
   font: 400 14.5px/1.45 var(--sans);
   color: var(--ink-2);
@@ -535,4 +534,114 @@ details.pub__abs p {
   .tl { grid-template-columns: 58px 1fr; gap: 22px; }
   .page-head h2 { font-size: 31px; }
   .btnrow { max-width: none; }
+}
+
+/* =============================================================
+   v2 additions — text cards, scrollable news, footer counter,
+   email copy/compose, NEW badge
+   ============================================================= */
+
+/* "NEW" badge reuses the oral pill but in a quieter tone */
+.pub__venue .oral,
+.rpub__venue .oral { white-space: nowrap; }
+
+/* ---- Text-only publication cards (no media column) ---- */
+.pub.is-text { grid-template-columns: 1fr; }
+.rpub.is-text { grid-template-columns: 1fr; }
+.pub.is-text::before { top: 18px; bottom: 18px; }
+
+/* ---- Selected-research: keep author/title rhythm on text cards ---- */
+.pub.is-text .pub__title { margin-top: 2px; }
+
+/* ---- Scrollable news ---- */
+.scroll-hint {
+  font: 500 10px/1 var(--mono);
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--muted);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.scroll-hint::after {
+  content: ""; width: 12px; height: 12px;
+  background: currentColor;
+  -webkit-mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M6 13l6 6 6-6'/%3E%3C/svg%3E");
+  mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M6 13l6 6 6-6'/%3E%3C/svg%3E");
+  animation: nudge 1.8s ease-in-out infinite;
+}
+@keyframes nudge { 0%,100%{ transform: translateY(-1px);} 50%{ transform: translateY(2px);} }
+@media (prefers-reduced-motion: reduce) { .scroll-hint::after { animation: none; } }
+.news-wrap.at-end .scroll-hint { opacity: 0; transition: opacity .25s; }
+
+.news-wrap { position: relative; }
+.news-scroll {
+  max-height: 540px;
+  overflow-y: auto;
+  padding: 2px 16px 2px 2px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-2) transparent;
+}
+.news-scroll:focus-visible { outline-offset: -2px; }
+.news-scroll::-webkit-scrollbar { width: 9px; }
+.news-scroll::-webkit-scrollbar-track { background: transparent; }
+.news-scroll::-webkit-scrollbar-thumb {
+  background: var(--line-2); border-radius: 100px;
+  border: 2px solid var(--paper); background-clip: padding-box;
+}
+.news-scroll::-webkit-scrollbar-thumb:hover { background: var(--muted); background-clip: padding-box; }
+.news-wrap::after {
+  content: ""; position: absolute; left: 0; right: 16px; bottom: 0;
+  height: 52px; pointer-events: none;
+  background: linear-gradient(to top, var(--paper) 12%, transparent);
+  transition: opacity .25s ease;
+}
+.news-wrap.at-end::after { opacity: 0; }
+
+/* ---- Site footer + visitor counter ---- */
+.sitefoot {
+  margin-top: 44px; padding-top: 22px;
+  border-top: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap;
+  font: 400 12px/1.5 var(--mono);
+  letter-spacing: .01em; color: var(--muted);
+}
+.visits {
+  display: none; align-items: center; gap: 8px;
+  padding: 7px 12px; border: 1px solid var(--line); border-radius: 100px;
+  background: var(--card); color: var(--ink-2);
+}
+.visits.is-ready { display: inline-flex; }
+.visits svg { width: 14px; height: 14px; color: var(--accent); }
+.visits b { font-weight: 500; color: var(--ink); }
+
+/* ---- Contact: email copy + compose ---- */
+.emails { display: flex; flex-direction: column; gap: 6px; margin: 2px 0 12px; }
+.email-copy {
+  appearance: none; cursor: pointer; text-align: left;
+  background: transparent; border: 0; padding: 0;
+  display: inline-flex; align-items: center; gap: 9px;
+  font: 400 14.5px/1.4 var(--sans); color: var(--ink);
+}
+.email-copy .addr { border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
+.email-copy .copy-hint {
+  font: 500 10px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); border: 1px solid var(--line); border-radius: 5px;
+  padding: 3px 6px; transition: all .15s ease;
+}
+.email-copy:hover .copy-hint { color: var(--accent); border-color: var(--accent); }
+.email-copy.copied .copy-hint { color: #fff; background: var(--accent); border-color: var(--accent); }
+
+.contact-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.cbtn {
+  display: inline-flex; align-items: center; gap: 7px; text-decoration: none;
+  font: 500 12.5px/1 var(--sans); color: var(--ink);
+  padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--card); transition: all .18s ease;
+}
+.cbtn svg { width: 14px; height: 14px; color: var(--accent); }
+.cbtn:hover { border-color: var(--accent); color: var(--accent); }
+.cbtn:hover svg { color: var(--accent); }
+
+@media (max-width: 560px) {
+  .news-scroll { max-height: 440px; }
+  .sitefoot { font-size: 11px; }
 }
