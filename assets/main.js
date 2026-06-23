@@ -107,6 +107,30 @@
       .catch(function () { /* leave hidden — never show a broken widget */ });
   }
 
+
+  /* ---- In-page section nav: highlight current section ---- */
+  function bindSecnav() {
+    var nav = document.querySelector(".secnav");
+    if (!nav) return;
+    var links = Array.prototype.slice.call(nav.querySelectorAll("a"));
+    var map = {}; var targets = [];
+    links.forEach(function (a) {
+      var el = document.getElementById(a.getAttribute("href").slice(1));
+      if (el) { map[el.id] = a; targets.push(el); }
+    });
+    if (!("IntersectionObserver" in window) || !targets.length) return;
+    if (links[0]) links[0].classList.add("is-active");
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          links.forEach(function (l) { l.classList.remove("is-active"); });
+          if (map[e.target.id]) map[e.target.id].classList.add("is-active");
+        }
+      });
+    }, { rootMargin: "-18% 0px -72% 0px", threshold: 0 });
+    targets.forEach(function (t) { io.observe(t); });
+  }
+
   /* ---- Footer year ---- */
   function bindYear() {
     document.querySelectorAll("[data-year]").forEach(function (y) {
@@ -116,7 +140,7 @@
 
   function init() {
     bindTheme(); bindReveal(); bindNewsScroll();
-    bindCopy(); bindYear();
+    bindCopy(); bindSecnav(); bindYear();
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
