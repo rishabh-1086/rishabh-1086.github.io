@@ -691,3 +691,30 @@ html[data-theme="dark"] .pub__media.fig, html[data-theme="dark"] .rpub__media.fi
 .exp__list li { position: relative; padding-left: 18px; font: 400 14.5px/1.62 var(--serif); color: var(--ink-2); }
 .exp__list li::before { content: ""; position: absolute; left: 1px; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); opacity: .65; }
 .exp__list li b { color: var(--ink); font-weight: 600; }
+
+
+/* ---------- In-page section nav (jump links) ---------- */
+.secnav {
+  position: sticky; top: 0; z-index: 30;
+  display: flex; flex-wrap: wrap; gap: 8px;
+  padding: 14px 0; margin-bottom: 8px;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.secnav a {
+  font: 500 12px/1 var(--mono); letter-spacing: .02em;
+  text-decoration: none; color: var(--ink-2);
+  padding: 8px 13px; border: 1px solid var(--line); border-radius: 100px;
+  background: var(--card); white-space: nowrap;
+  transition: color .15s ease, background .15s ease, border-color .15s ease;
+}
+.secnav a:hover { color: var(--accent); border-color: var(--accent); }
+.secnav a.is-active { color: #fff; background: var(--accent); border-color: var(--accent); }
+
+/* offset anchored targets so the sticky bar never covers a heading */
+.section__eyebrow[id], .subhead[id] { scroll-margin-top: 72px; }
+
+@media (max-width: 940px) {
+  .secnav { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .secnav::-webkit-scrollbar { display: none; }
+}
