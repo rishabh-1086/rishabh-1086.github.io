@@ -675,3 +675,19 @@ html[data-theme="dark"] .pub__media.fig, html[data-theme="dark"] .rpub__media.fi
   .vmap { align-items: flex-start; }
   .vmap__box { width: 100%; max-width: 320px; }
 }
+
+
+/* ---------- Experience / CV page ---------- */
+.exp-list { display: flex; flex-direction: column; margin-bottom: 6px; }
+.exp { padding: 20px 0; border-top: 1px solid var(--line); }
+.exp:first-child { border-top: 0; padding-top: 4px; }
+.exp__top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px 20px; flex-wrap: wrap; }
+.exp__role { font: 500 18px/1.32 var(--serif); letter-spacing: -.01em; color: var(--ink); margin: 0; }
+.exp__date { font: 500 12px/1.5 var(--mono); letter-spacing: .02em; color: var(--muted); white-space: nowrap; }
+.exp__org { font: 600 13.5px/1.5 var(--sans); color: var(--accent); margin: 5px 0 0; }
+.exp__org .where { color: var(--ink-2); font-weight: 400; }
+.exp__note { font: 400 14.5px/1.6 var(--serif); color: var(--ink-2); margin: 8px 0 0; }
+.exp__list { margin: 10px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.exp__list li { position: relative; padding-left: 18px; font: 400 14.5px/1.62 var(--serif); color: var(--ink-2); }
+.exp__list li::before { content: ""; position: absolute; left: 1px; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); opacity: .65; }
+.exp__list li b { color: var(--ink); font-weight: 600; }
