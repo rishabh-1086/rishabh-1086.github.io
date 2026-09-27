@@ -422,6 +422,17 @@ details.pub__abs p {
   background: #fff; border-radius: 4px;   /* white chip keeps dark marks visible in dark mode */
 }
 .tl__body .org { white-space: nowrap; }   /* keep name + logo + punctuation on one line */
+/* Google's icon has a lot of built-in padding: drop the tile padding and zoom the G so it fills the tile */
+.tl__body .org-logo-fill {
+  display: inline-block; width: 16px; height: 16px;
+  margin-left: 1px; vertical-align: -3px;
+  background: #fff; border-radius: 4px; overflow: hidden;
+}
+.tl__body .org-logo-fill .org-logo {
+  display: block; width: 100%; height: 100%;
+  margin: 0; padding: 0; background: none; border-radius: 0;
+  transform: scale(var(--logo-zoom, 1.2));
+}
 
 .news-toggle {
   margin-top: 24px;
