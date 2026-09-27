@@ -130,69 +130,84 @@
 
         <article class="pub reveal">
           <div class="pub__media fig"><img src="images/research/DistIL_Overview.png" alt="DistIL: distributional DAgger with future-aware credit assignment" loading="lazy"></div>
-          <div>
-            <div class="pub__venue"><span class="oral">NEW</span> RLxF Workshop · ICML 2026</div>
+          <div class="pub__body">
             <h3 class="pub__title">Reinforcement Learning from Rich Feedback with Distributional DAgger</h3>
             <p class="pub__authors"><b>Rishabh Agrawal</b>, Jacob Fein-Ashley, Paria Rashidinejad</p>
+            <p class="pub__venue"><span class="oral">NEW</span> Advances in Neural Information Processing Systems (NeurIPS) 2026</p>
+            <div class="pub__also">
+              <span>Also accepted at</span>
+              <ul>
+                <li>ICML 2026 Workshop on RL from World Feedback</li>
+                <li>3rd AI for Math Workshop: Toward Self-Evolving Scientific Agents at ICML 2026</li>
+                <li>Continual Reinforcement Learning Workshop at RLC 2026</li>
+                <li>Second Workshop on the Foundations of Post-training at COLT 2026</li>
+              </ul>
+            </div>
             <div class="pub__links">
               <a class="chip" href="https://arxiv.org/pdf/2606.05152" target="_blank" rel="noopener">PDF</a>
               <a class="chip" href="https://rishabh-1086.github.io/project-distIL/" target="_blank" rel="noopener">Project</a>
               <a class="chip" href="https://github.com/rishabh-1086/distIL" target="_blank" rel="noopener">Code</a>
             </div>
-            <details class="pub__abs">
-              <summary>Abstract</summary>
-              <p>The dominant RL-from-verifiable-rewards recipe rewards each response with a single correctness bit, yet many settings provide far richer feedback — execution traces, tool outputs, expert corrections, self-evaluations. We study how to use such feedback through DistIL, a distributional variant of DAgger that optimizes a forward cross-entropy objective. Unlike reverse-KL or Jensen–Shannon self-distillation, DistIL guarantees monotonic policy improvement and sublinear regret, performs future-aware credit assignment, and improves Pass@N across scientific reasoning, coding, and hard mathematics.</p>
-            </details>
           </div>
+          <details class="pub__abs">
+            <summary>Abstract</summary>
+            <p>The dominant RL-from-verifiable-rewards recipe rewards each response with a single correctness bit, yet many settings provide far richer feedback — execution traces, tool outputs, expert corrections, self-evaluations. We study how to use such feedback through DistIL, a distributional variant of DAgger that optimizes a forward cross-entropy objective. Unlike reverse-KL or Jensen–Shannon self-distillation, DistIL guarantees monotonic policy improvement and sublinear regret, performs future-aware credit assignment, and improves Pass@N across scientific reasoning, coding, and hard mathematics.</p>
+          </details>
         </article>
 
         <article class="pub reveal">
           <div class="pub__media fig"><img src="images/research/BFM_Overview.png" alt="RBFM: robust task inference under dynamics shift" loading="lazy"></div>
-          <div>
-            <div class="pub__venue"><span class="oral">NEW</span> arXiv · 2026</div>
+          <div class="pub__body">
             <h3 class="pub__title">When Dynamics Shift, Robust Task Inference Wins: Offline Imitation Learning with Behavior Foundation Models Revisited</h3>
             <p class="pub__authors"><b>Rishabh Agrawal</b>, Rahul Jain, Ashutosh Nayyar</p>
+            <p class="pub__venue"><span class="oral">NEW</span> Advances in Neural Information Processing Systems (NeurIPS) 2026</p>
             <div class="pub__links">
               <a class="chip" href="https://arxiv.org/abs/2605.17017" target="_blank" rel="noopener">arXiv</a>
             </div>
-            <details class="pub__abs">
-              <summary>Abstract</summary>
-              <p>Behavior Foundation Models (BFMs) enable scalable imitation learning but assume fixed dynamics, leaving them brittle to real-world shifts in friction, actuation, or sensor noise. We recast BFM task inference as a robust minimax problem and introduce RBFM-Light and RBFM-Heavy — two variants that add robustness only at inference, with no change to pretraining and using offline data from a single nominal environment. Both substantially outperform standard BFM and robust offline IL baselines under dynamics shifts.</p>
-            </details>
           </div>
+          <details class="pub__abs">
+            <summary>Abstract</summary>
+            <p>Behavior Foundation Models (BFMs) enable scalable imitation learning but assume fixed dynamics, leaving them brittle to real-world shifts in friction, actuation, or sensor noise. We recast BFM task inference as a robust minimax problem and introduce RBFM-Light and RBFM-Heavy — two variants that add robustness only at inference, with no change to pretraining and using offline data from a single nominal environment. Both substantially outperform standard BFM and robust offline IL baselines under dynamics shifts.</p>
+          </details>
         </article>
 
         <article class="pub reveal">
-          <div class="pub__media"><img src="images/research/bedroil.png" alt="BE-DROIL method overview" loading="lazy"></div>
-          <div>
-            <div class="pub__venue"><span class="oral">ORAL</span> NeurIPS 2025 E-SARS · L4DC 2026</div>
+          <div class="pub__media fig"><img src="images/research/bedroil.png" alt="BE-DROIL method overview" loading="lazy"></div>
+          <div class="pub__body">
             <h3 class="pub__title">Balance Equation-based Distributionally Robust Offline Imitation Learning</h3>
             <p class="pub__authors"><b>Rishabh Agrawal</b>, Yusuf Alvi, Rahul Jain, Ashutosh Nayyar</p>
+            <p class="pub__venue">8th Annual Conference on Learning for Dynamics and Control (L4DC) 2026</p>
+            <div class="pub__also">
+              <span>Also accepted at</span>
+              <ul>
+                <li>Workshop on Embodied and Safe-Assured Robotic Systems at NeurIPS 2025 <b>(Oral presentation)</b></li>
+              </ul>
+            </div>
             <div class="pub__links">
               <a class="chip" href="https://arxiv.org/pdf/2511.07942" target="_blank" rel="noopener">arXiv</a>
               <a class="chip" href="https://drive.google.com/file/d/18N2SxQt2KH1-woaaxWRmWElP4vXIaXfo/view?usp=sharing" target="_blank" rel="noopener">Oral talk</a>
             </div>
-            <details class="pub__abs">
-              <summary>Abstract</summary>
-              <p>Standard imitation learning implicitly assumes the environment stays fixed between training and deployment — an assumption that rarely holds. We learn robust policies from expert demonstrations alone by solving a distributionally robust optimization over an uncertainty set of transition models, and show the worst-case objective can be rewritten entirely in terms of the nominal data distribution, enabling tractable offline learning with stronger robustness under shifted dynamics.</p>
-            </details>
           </div>
+          <details class="pub__abs">
+            <summary>Abstract</summary>
+            <p>Standard imitation learning implicitly assumes the environment stays fixed between training and deployment — an assumption that rarely holds. We learn robust policies from expert demonstrations alone by solving a distributionally robust optimization over an uncertainty set of transition models, and show the worst-case objective can be rewritten entirely in terms of the nominal data distribution, enabling tractable offline learning with stronger robustness under shifted dynamics.</p>
+          </details>
         </article>
 
         <article class="pub reveal">
           <div class="pub__media"><video src="videos/HalfCheetah_video.mp4" poster="images/posters/HalfCheetah_video.jpg" muted loop autoplay playsinline preload="metadata"></video></div>
-          <div>
-            <div class="pub__venue">AAAI 2025</div>
+          <div class="pub__body">
             <h3 class="pub__title">Markov Balance Satisfaction Improves Performance in Strictly Batch Offline Imitation Learning</h3>
             <p class="pub__authors"><b>Rishabh Agrawal</b>, Nathan Dahlin, Rahul Jain, Ashutosh Nayyar</p>
+            <p class="pub__venue">Proceedings of the AAAI Conference on Artificial Intelligence 2025</p>
             <div class="pub__links">
               <a class="chip" href="https://arxiv.org/pdf/2408.09125" target="_blank" rel="noopener">arXiv</a>
             </div>
-            <details class="pub__abs">
-              <summary>Abstract</summary>
-              <p>We study imitation in a strictly offline setting — no environment interaction, no auxiliary data, no transition model. Our method uses the Markov balance equation with a conditional density estimation framework, employing conditional normalizing flows for dynamics, and consistently outperforms many state-of-the-art IL algorithms across Classic Control and MuJoCo.</p>
-            </details>
           </div>
+          <details class="pub__abs">
+            <summary>Abstract</summary>
+            <p>We study imitation in a strictly offline setting — no environment interaction, no auxiliary data, no transition model. Our method uses the Markov balance equation with a conditional density estimation framework, employing conditional normalizing flows for dynamics, and consistently outperforms many state-of-the-art IL algorithms across Classic Control and MuJoCo.</p>
+          </details>
         </article>
 
       </div>
@@ -212,39 +227,29 @@
       <div class="news-wrap reveal">
         <div class="news-scroll" tabindex="0" role="region" aria-label="News timeline, scrollable">
           <ol class="timeline">
-            <li class="tl is-star"><div class="tl__date">Jun 2026</div><div class="tl__body"><a href="https://arxiv.org/pdf/2606.05152" target="_blank" rel="noopener">Reinforcement Learning from Rich Feedback with Distributional DAgger</a> (DistIL) accepted at the <a href="https://sites.google.com/view/rlxf-icml2026" target="_blank" rel="noopener">RLxF Workshop</a> at ICML 2026.</div></li>
-            <li class="tl"><div class="tl__date">Jun 2026</div><div class="tl__body">New preprint: <a href="https://arxiv.org/pdf/2606.05152" target="_blank" rel="noopener">Reinforcement Learning from Rich Feedback with Distributional DAgger</a> is out on arXiv.</div></li>
-            <li class="tl is-star"><div class="tl__date">May 2026</div><div class="tl__body">Started as a <span class="mark">Student Researcher at Google</span>.</div></li>
-            <li class="tl"><div class="tl__date">May 2026</div><div class="tl__body">New preprint: <a href="https://arxiv.org/pdf/2605.17017" target="_blank" rel="noopener">When Dynamics Shift, Robust Task Inference Wins: Offline Imitation Learning with Behavior Foundation Models Revisited</a> is out on arXiv.</div></li>
-            <li class="tl"><div class="tl__date">Jan 2026</div><div class="tl__body">Attended the <a href="https://ojs.aaai.org/index.php/AAAI/article/view/42139" target="_blank" rel="noopener">AAAI 2026 Doctoral Consortium</a> in Singapore to present my thesis research.</div></li>
-            <li class="tl is-star"><div class="tl__date">Jan 2026</div><div class="tl__body"><a href="https://openreview.net/pdf?id=rkUrkqEKZE" target="_blank" rel="noopener">BE-DROIL</a> accepted at <span class="mark">L4DC 2026</span>.</div></li>
-            <li class="tl is-star"><div class="tl__date">Nov 2025</div><div class="tl__body"><a href="https://openreview.net/pdf?id=rkUrkqEKZE" target="_blank" rel="noopener">BE-DROIL</a> accepted at the NeurIPS 2025 E-SARS Workshop for an <span class="mark">oral presentation</span>.</div></li>
-            <li class="tl is-star"><div class="tl__date">Nov 2025</div><div class="tl__body">Passed my Ph.D. Qualifying Exam — <span class="mark">officially a Ph.D. Candidate</span>.</div></li>
+            <li class="tl is-star"><div class="tl__date">Sep 2026</div><div class="tl__body">Our paper “<a href="https://arxiv.org/pdf/2606.05152" target="_blank" rel="noopener">Reinforcement Learning from Rich Feedback with Distributional DAgger</a>” was accepted to <span class="mark">NeurIPS 2026</span>.</div></li>
+            <li class="tl is-star"><div class="tl__date">Sep 2026</div><div class="tl__body">Our paper “<a href="https://arxiv.org/pdf/2605.17017" target="_blank" rel="noopener">When Dynamics Shift, Robust Task Inference Wins: Offline Imitation Learning with Behavior Foundation Models Revisited</a>” was accepted to <span class="mark">NeurIPS 2026</span>.</div></li>
+            <li class="tl is-star"><div class="tl__date">May 2026</div><div class="tl__body">Started as a <span class="mark">Student Researcher</span> at <span class="mark">Google</span> <img class="org-logo" src="https://www.google.com/s2/favicons?domain=google.com&amp;sz=64" alt="" width="16" height="16" referrerpolicy="no-referrer">.</div></li>
+            <li class="tl is-star"><div class="tl__date">Jan 2026</div><div class="tl__body">Our paper “<a href="https://arxiv.org/pdf/2511.07942" target="_blank" rel="noopener">Balance Equation-based Distributionally Robust Offline Imitation Learning</a>” was accepted to <span class="mark">L4DC 2026</span>.</div></li>
+            <li class="tl is-star"><div class="tl__date">Nov 2025</div><div class="tl__body">Passed my Ph.D. Qualifying Exam, <span class="mark">officially a Ph.D. Candidate</span>!</div></li>
             <li class="tl"><div class="tl__date">Nov 2025</div><div class="tl__body">Selected for the AAAI 2026 Doctoral Consortium in Singapore.</div></li>
-            <li class="tl"><div class="tl__date">Aug 2025</div><div class="tl__body">Wrapped up my Applied Scientist internship at Amazon (RL for agentic AI systems).</div></li>
-            <li class="tl"><div class="tl__date">Jun 2025</div><div class="tl__body">Presented <a href="https://github.com/rishabh-1086/CKIL/blob/main/CKIL_Full_Paper.pdf" target="_blank" rel="noopener">CKIL</a> at L4DC 2025 in Ann Arbor, Michigan.</div></li>
-            <li class="tl"><div class="tl__date">May 2025</div><div class="tl__body">Started as an <span class="mark">Applied Scientist Intern at Amazon</span>.</div></li>
-            <li class="tl"><div class="tl__date">May 2025</div><div class="tl__body">Awarded <span class="mark">two M.S. degrees</span> — Computer Science and Electrical Engineering — at USC.</div></li>
+            <li class="tl is-star"><div class="tl__date">Nov 2025</div><div class="tl__body">Our paper “<a href="https://arxiv.org/pdf/2511.07942" target="_blank" rel="noopener">Balance Equation-based Distributionally Robust Offline Imitation Learning</a>” was accepted to the NeurIPS 2025 E-SARS Workshop for an <span class="mark">oral presentation</span>.</div></li>
+            <li class="tl"><div class="tl__date">May 2025</div><div class="tl__body">Started as an <span class="mark">Applied Scientist Intern</span> at <span class="mark">Amazon</span> <img class="org-logo" src="https://www.google.com/s2/favicons?domain=amazon.com&amp;sz=64" alt="" width="16" height="16" referrerpolicy="no-referrer">.</div></li>
+            <li class="tl"><div class="tl__date">May 2025</div><div class="tl__body">Awarded <span class="mark">two M.S. degrees</span> in Computer Science and Electrical Engineering at USC.</div></li>
             <li class="tl"><div class="tl__date">Apr 2025</div><div class="tl__body">Gave a talk on offline imitation learning at the 45th SoCal Control Workshop, UC San Diego.</div></li>
-            <li class="tl"><div class="tl__date">Feb 2025</div><div class="tl__body"><a href="https://github.com/rishabh-1086/CKIL/blob/main/CKIL_Full_Paper.pdf" target="_blank" rel="noopener">Conditional Kernel Imitation Learning</a> accepted at L4DC 2025.</div></li>
-            <li class="tl"><div class="tl__date">Feb 2025</div><div class="tl__body">Presented <a href="https://arxiv.org/pdf/2408.09125" target="_blank" rel="noopener">MBIL</a> at AAAI 2025 in Philadelphia.</div></li>
-            <li class="tl"><div class="tl__date">Dec 2024</div><div class="tl__body"><a href="https://arxiv.org/pdf/2408.09125" target="_blank" rel="noopener">Markov Balance Satisfaction</a> accepted at AAAI 2025.</div></li>
-            <li class="tl"><div class="tl__date">Dec 2024</div><div class="tl__body">Presented <a href="https://opt-ml.org/papers/2024/paper84.pdf" target="_blank" rel="noopener">Policy Optimization for Strictly Batch IL</a> at NeurIPS 2024, Vancouver.</div></li>
+            <li class="tl"><div class="tl__date">Feb 2025</div><div class="tl__body">Our paper “<a href="https://proceedings.mlr.press/v283/agrawal25a.html" target="_blank" rel="noopener">Conditional Kernel Imitation Learning for Continuous State Environments</a>” was accepted to L4DC 2025.</div></li>
+            <li class="tl"><div class="tl__date">Dec 2024</div><div class="tl__body">Our paper “<a href="https://arxiv.org/pdf/2408.09125" target="_blank" rel="noopener">Markov Balance Satisfaction Improves Performance in Strictly Batch Offline Imitation Learning</a>” was accepted to AAAI 2025.</div></li>
             <li class="tl is-star"><div class="tl__date">Nov 2024</div><div class="tl__body">Received the <span class="mark">Outstanding Poster Award</span> at USC's 14th Annual Research Festival.</div></li>
-            <li class="tl"><div class="tl__date">Sep 2024</div><div class="tl__body"><a href="https://opt-ml.org/papers/2024/paper84.pdf" target="_blank" rel="noopener">Policy Optimization for Strictly Batch IL</a> accepted at OPT-ML, NeurIPS 2024.</div></li>
-            <li class="tl is-star"><div class="tl__date">Jan 2024</div><div class="tl__body">Awarded the <span class="mark">Graduate School Fellowship</span> by USC.</div></li>
-            <li class="tl"><div class="tl__date">Aug 2023</div><div class="tl__body">Began serving as Teaching Assistant for EE556: Stochastic Systems &amp; Reinforcement Learning.</div></li>
-            <li class="tl"><div class="tl__date">Aug 2023</div><div class="tl__body"><a href="https://arxiv.org/pdf/2308.12573" target="_blank" rel="noopener">CKIL preprint</a> released on arXiv.</div></li>
-            <li class="tl"><div class="tl__date">Dec 2022</div><div class="tl__body"><a href="https://patents.google.com/patent/US11523411B2/en/" target="_blank" rel="noopener">Patent</a> on radio-resource scheduling granted.</div></li>
+            <li class="tl"><div class="tl__date">Sep 2024</div><div class="tl__body">Our paper “<a href="https://opt-ml.org/papers/2024/paper84.pdf" target="_blank" rel="noopener">Policy Optimization for Strictly Batch Imitation Learning</a>” was accepted to the Workshop on Optimization for Machine Learning at NeurIPS 2024.</div></li>
+            <li class="tl"><div class="tl__date">Dec 2022</div><div class="tl__body">Patent on “<a href="https://patents.google.com/patent/US11523411B2/en/" target="_blank" rel="noopener">Method and System for Radio-Resource Scheduling in Telecommunication Network</a>” granted.</div></li>
             <li class="tl"><div class="tl__date">Jan 2022</div><div class="tl__body">Started my Ph.D. at USC with a broad focus on reinforcement learning.</div></li>
-            <li class="tl"><div class="tl__date">Aug 2020</div><div class="tl__body"><a href="https://ieeexplore.ieee.org/document/9322182/" target="_blank" rel="noopener">A RL Framework for QoS-Driven Radio Resource Scheduling</a> accepted at IEEE Globecom 2020.</div></li>
-            <li class="tl"><div class="tl__date">Sep 2019</div><div class="tl__body">Presented <a href="https://link.springer.com/chapter/10.1007/978-3-030-37599-7_26" target="_blank" rel="noopener">CoPASample</a> at LOD 2019 in Siena, Italy.</div></li>
-            <li class="tl"><div class="tl__date">Jun 2019</div><div class="tl__body">Joined <span class="mark">Samsung Research</span> as a <span class="mark">Research Engineer</span> in the 6G Lab.</div></li>
+            <li class="tl"><div class="tl__date">Aug 2020</div><div class="tl__body">Our paper “<a href="https://ieeexplore.ieee.org/document/9322182" target="_blank" rel="noopener">A Reinforcement Learning Framework for QoS-Driven Radio Resource Scheduler</a>” was accepted to IEEE Globecom 2020.</div></li>
+            <li class="tl"><div class="tl__date">Jun 2019</div><div class="tl__body">Joined <span class="mark">Samsung Research</span> <img class="org-logo" src="https://www.google.com/s2/favicons?domain=samsung.com&amp;sz=64" alt="" width="16" height="16" referrerpolicy="no-referrer"> as a <span class="mark">Research Engineer</span> in the 6G Lab.</div></li>
             <li class="tl"><div class="tl__date">May 2019</div><div class="tl__body">Graduated from IIT Guwahati with a B.Tech in Mathematics &amp; Computing.</div></li>
-            <li class="tl"><div class="tl__date">Mar 2018</div><div class="tl__body"><a href="https://ieeexplore.ieee.org/document/8491556/" target="_blank" rel="noopener">Optimal Fuzzifier Range for Alpha-Planes of GT2 Fuzzy Sets</a> accepted at FUZZ-IEEE 2018.</div></li>
-            <li class="tl"><div class="tl__date">May 2018</div><div class="tl__body">Summer research at the University of Minnesota, Twin Cities.</div></li>
-            <li class="tl"><div class="tl__date">May 2017</div><div class="tl__body">Summer research at Hanyang University, South Korea.</div></li>
-            <li class="tl"><div class="tl__date">Jul 2015</div><div class="tl__body">Began undergraduate studies at IIT Guwahati (Mathematics, CS &amp; Financial Engineering).</div></li>
+            <li class="tl"><div class="tl__date">May 2018</div><div class="tl__body">Started a summer research internship at the University of Minnesota, Twin Cities.</div></li>
+            <li class="tl"><div class="tl__date">Mar 2018</div><div class="tl__body">Our paper “<a href="https://ieeexplore.ieee.org/document/8491556" target="_blank" rel="noopener">Determining the Optimal Fuzzifier Range for Alpha-Planes of General Type-2 Fuzzy Sets</a>” was accepted to FUZZ-IEEE 2018.</div></li>
+            <li class="tl"><div class="tl__date">May 2017</div><div class="tl__body">Started a summer research internship at Hanyang University, South Korea.</div></li>
+            <li class="tl"><div class="tl__date">Jul 2015</div><div class="tl__body">Started undergraduate studies at IIT Guwahati (Mathematics, CS &amp; Financial Engineering).</div></li>
           </ol>
         </div>
       </div>
