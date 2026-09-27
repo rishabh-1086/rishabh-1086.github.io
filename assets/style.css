@@ -421,6 +421,7 @@ details.pub__abs p {
   margin-left: 1px; vertical-align: -3px;
   background: #fff; border-radius: 4px;   /* white chip keeps dark marks visible in dark mode */
 }
+.tl__body .org { white-space: nowrap; }   /* keep name + logo + punctuation on one line */
 
 .news-toggle {
   margin-top: 24px;
