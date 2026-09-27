@@ -279,9 +279,11 @@ html[data-theme="dark"] .theme .moon { display: block; }
 .pubgrid { display: flex; flex-direction: column; gap: 14px; }
 .pub {
   display: grid;
-  grid-template-columns: 132px 1fr;
-  gap: 18px;
-  padding: 18px;
+  grid-template-columns: 180px minmax(0, 1fr);
+  grid-template-areas: "media body" ". abs";
+  column-gap: 22px;
+  align-items: center;
+  padding: 20px;
   border: 1px solid var(--line);
   border-radius: var(--r);
   background: var(--card);
@@ -300,23 +302,34 @@ html[data-theme="dark"] .theme .moon { display: block; }
 }
 .pub:hover::before { opacity: 1; }
 .pub__media {
+  grid-area: media;
   border-radius: 8px; overflow: hidden;
   border: 1px solid var(--line);
   background: var(--paper-2);
-  aspect-ratio: 16/10;
+  aspect-ratio: 4/3;
 }
 .pub__media img, .pub__media video { width: 100%; height: 100%; object-fit: cover; }
+.pub__body { grid-area: body; min-width: 0; }
 .pub__venue {
-  font: 500 11px/1 var(--mono);
-  letter-spacing: .04em;
+  font: italic 400 15px/1.45 var(--serif);
   color: var(--accent);
-  display: inline-flex; align-items: center; gap: 8px;
-  margin-bottom: 8px;
+  margin: 0;
 }
 .pub__venue .oral {
+  display: inline-block; vertical-align: 2px; margin-right: 6px;
+  font: normal 500 10px/1 var(--mono); letter-spacing: .06em;
   color: #fff; background: var(--accent);
-  padding: 3px 7px; border-radius: 5px; font-size: 10px; letter-spacing: .06em;
+  padding: 3px 7px; border-radius: 5px;
 }
+/* additional venues ("Also accepted at") — shared by home + research cards */
+.pub__also, .rpub__also { margin: 8px 0 0; padding-left: 11px; border-left: 2px solid var(--line-2); }
+.pub__also > span, .rpub__also > span {
+  display: block; margin-bottom: 4px;
+  font: 500 10px/1.2 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+}
+.pub__also ul, .rpub__also ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 3px; }
+.pub__also li, .rpub__also li { font: 400 13px/1.45 var(--sans); color: var(--ink-2); }
+.pub__also b, .rpub__also b { color: var(--accent); font-weight: 600; }
 .pub__title {
   font: 480 18.5px/1.3 var(--serif);
   letter-spacing: -.01em;
@@ -326,10 +339,10 @@ html[data-theme="dark"] .theme .moon { display: block; }
 .pub__authors {
   font: 400 13.5px/1.5 var(--sans);
   color: var(--ink-2);
-  margin: 0 0 10px;
+  margin: 0 0 6px;
 }
 .pub__authors b { color: var(--ink); font-weight: 600; }
-.pub__links { display: flex; flex-wrap: wrap; gap: 7px; }
+.pub__links { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
 .chip {
   font: 500 12px/1 var(--mono);
   text-decoration: none;
@@ -342,7 +355,7 @@ html[data-theme="dark"] .theme .moon { display: block; }
 .chip:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-wash); }
 .chip svg { width: 11px; height: 11px; }
 
-details.pub__abs { margin-top: 12px; }
+details.pub__abs { grid-area: abs; margin-top: 12px; }
 details.pub__abs summary {
   font: 500 12px/1 var(--mono); color: var(--muted);
   cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 6px;
@@ -403,6 +416,11 @@ details.pub__abs p {
 .tl__body a:hover { color: var(--accent); }
 .tl__body .mark { color: var(--accent); font-weight: 600; }
 .tl.is-star .tl__body::before { border-color: var(--accent); background: var(--accent); }
+.tl__body .org-logo {
+  display: inline-block; width: 16px; height: 16px; padding: 1px;
+  margin-left: 1px; vertical-align: -3px;
+  background: #fff; border-radius: 4px;   /* white chip keeps dark marks visible in dark mode */
+}
 
 .news-toggle {
   margin-top: 24px;
@@ -456,23 +474,28 @@ details.pub__abs p {
 /* research list (full) */
 .rlist { display: flex; flex-direction: column; gap: 16px; }
 .rpub {
-  display: grid; grid-template-columns: 168px 1fr; gap: 22px;
+  display: grid; grid-template-columns: 180px minmax(0, 1fr);
+  grid-template-areas: "media body" ". abs";
+  column-gap: 22px; align-items: center;
   padding: 20px; border: 1px solid var(--line); border-radius: var(--r);
   background: var(--card); transition: box-shadow .2s, border-color .2s;
 }
 .rpub:hover { box-shadow: var(--shadow); border-color: var(--line-2); }
 .rpub__media {
+  grid-area: media;
   border-radius: 8px; overflow: hidden; border: 1px solid var(--line);
-  background: var(--paper-2); align-self: start; aspect-ratio: 16/11;
+  background: var(--paper-2); aspect-ratio: 4/3;
 }
 .rpub__media img, .rpub__media video { width: 100%; height: 100%; object-fit: cover; }
-.rpub__venue { font: 500 11px/1 var(--mono); letter-spacing: .04em; color: var(--accent); margin-bottom: 7px; display: inline-flex; gap: 8px; align-items: center; }
-.rpub__venue .oral { color:#fff; background: var(--accent); padding: 3px 7px; border-radius: 5px; font-size: 10px; }
+.rpub__body { grid-area: body; min-width: 0; }
+.rpub__venue { font: italic 400 15px/1.45 var(--serif); color: var(--accent); margin: 0; }
+.rpub__venue .oral { display: inline-block; vertical-align: 2px; margin-right: 6px; font: normal 500 10px/1 var(--mono); letter-spacing: .06em; color: #fff; background: var(--accent); padding: 3px 7px; border-radius: 5px; }
 .rpub__title { font: 480 19px/1.3 var(--serif); letter-spacing: -.01em; margin: 0 0 6px; color: var(--ink); }
-.rpub__authors { font: 400 13.5px/1.5 var(--sans); color: var(--ink-2); margin: 0 0 10px; }
+.rpub__authors { font: 400 13.5px/1.5 var(--sans); color: var(--ink-2); margin: 0 0 6px; }
 .rpub__authors b { color: var(--ink); font-weight: 600; }
-.rpub__links { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 4px; }
-.rpub__abs { margin-top: 12px; }
+.rpub__links { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+.rpub__links:empty { display: none; }
+.rpub__abs { grid-area: abs; margin-top: 12px; }
 .rpub__abs summary {
   font: 500 11.5px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase;
   color: var(--muted); cursor: pointer; list-style: none; display: inline-flex; gap: 6px; align-items: center;
@@ -528,8 +551,8 @@ details.pub__abs p {
   .identity h1 { font-size: 25px; }
   .lede { font-size: 20px; }
   .prose p { font-size: 16.5px; }
-  .pub, .rpub { grid-template-columns: 1fr; }
-  .pub__media, .rpub__media { aspect-ratio: 16/8; }
+  .pub, .rpub { grid-template-columns: minmax(0, 1fr); grid-template-areas: "media" "body" "abs"; }
+  .pub__media, .rpub__media { aspect-ratio: 16/9; margin-bottom: 14px; }
   .timeline::before { left: 66px; }
   .tl { grid-template-columns: 58px 1fr; gap: 22px; }
   .page-head h2 { font-size: 31px; }
@@ -546,8 +569,7 @@ details.pub__abs p {
 .rpub__venue .oral { white-space: nowrap; }
 
 /* ---- Text-only publication cards (no media column) ---- */
-.pub.is-text { grid-template-columns: 1fr; }
-.rpub.is-text { grid-template-columns: 1fr; }
+.pub.is-text, .rpub.is-text { grid-template-columns: minmax(0, 1fr); grid-template-areas: "body" "abs"; }
 .pub.is-text::before { top: 18px; bottom: 18px; }
 
 /* ---- Selected-research: keep author/title rhythm on text cards ---- */
@@ -650,10 +672,9 @@ details.pub__abs p {
   .news-scroll { max-height: 440px; }
 }
 
-/* ---- Diagram/figure thumbnails (SVG): show whole figure, no crop ---- */
-.pub__media.fig, .rpub__media.fig { background: #FBFAF7; }
+/* ---- Figure/diagram thumbnails: whole figure on a white panel, never cropped ---- */
+.pub__media.fig, .rpub__media.fig { background: #fff; padding: 6px; }
 .pub__media.fig img, .rpub__media.fig img { object-fit: contain; }
-html[data-theme="dark"] .pub__media.fig, html[data-theme="dark"] .rpub__media.fig { background: #f3f1ec; }
 
 /* ---- Visitor map (MapMyVisitors / ClustrMaps widget) ---- */
 .vmap { display: flex; flex-direction: column; align-items: flex-end; gap: 11px; }
