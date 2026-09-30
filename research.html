@@ -103,15 +103,28 @@
     </header>
 
     <!-- ===== Publications ===== -->
-    <h3 id="publications" class="subhead reveal">Publications <span class="count">10</span></h3>
+    <h3 id="publications" class="subhead reveal">Publications <span class="count">11</span></h3>
     <div class="rlist">
+
+      <article class="rpub reveal">
+        <div class="rpub__media fig"><img src="images/research/AdviSD_Overview.png" alt="AdviSD: an advisor model learns to advise a frontier LLM via targeted multi-turn self-distillation" loading="lazy"></div>
+        <div class="rpub__body">
+          <h4 class="rpub__title">AdviSD: Learning to Advise Frontier LLMs via Targeted Multi-Turn Self-Distillation</h4>
+          <p class="rpub__authors"><b>Rishabh Agrawal</b>, Hejie Cui, Shasha Li, Shanchan Wu, Sercan Ö. Arık</p>
+          <p class="rpub__venue">arXiv preprint 2026</p>
+          <div class="rpub__links">
+            <a class="chip" href="https://arxiv.org/pdf/2609.38142" target="_blank" rel="noopener">PAPER</a>
+          </div>
+        </div>
+        <details class="rpub__abs"><summary>Abstract</summary><p>A small trainable advisor can steer a frozen language-model executor using natural-language advice. In addition to learning from task rewards, the advisor can use feedback from completed interactions to improve its advice. However, a plausible correction need not change execution, yet learning from such corrections can still affect the advisor's future decisions in other contexts. In a shared-parameter model, we prove that such corrections can limit learning if their targets favor useful advice less strongly than those of other corrections. Keeping them less often than the rest improves the model's eventual performance compared to learning from every correction. Motivated by this, our method, Advisor Self-Distillation (AdviSD), pairs outcome-based reinforcement learning with self-distillation from a feedback-conditioned copy of the advisor selectively. Reflection proposes corrections, and the advisor scores the same recorded executor response with and without its issued advice, using the magnitude of the difference to select decisions for supervision. This approach does not require executor likelihoods or additional executor rollouts. Experiments with Qwen3-8B advisors for Gemini and Claude show that AdviSD outperforms advisor-GRPO by 4.2–6.4 percentage points on BFCL-v3 and by 3.9–5.1 score points on EnvScaler. The trained advisors generalize to out-of-domain tasks and transfer across different executor versions and model families. AdviSD also beats matched-count random selection, supporting the value of its selection rule.</p></details>
+      </article>
 
       <article class="rpub reveal">
         <div class="rpub__media fig"><img src="images/research/DistIL_Overview.png" alt="DistIL: distributional DAgger with future-aware credit assignment" loading="lazy"></div>
         <div class="rpub__body">
           <h4 class="rpub__title">Reinforcement Learning from Rich Feedback with Distributional DAgger</h4>
           <p class="rpub__authors"><b>Rishabh Agrawal</b>, Jacob Fein-Ashley, Paria Rashidinejad</p>
-          <p class="rpub__venue"><span class="oral">NEW</span> Advances in Neural Information Processing Systems (NeurIPS) 2026</p>
+          <p class="rpub__venue">Advances in Neural Information Processing Systems (NeurIPS) 2026</p>
           <div class="rpub__also">
             <span>Also accepted at</span>
             <ul>
@@ -136,7 +149,7 @@
         <div class="rpub__body">
           <h4 class="rpub__title">When Dynamics Shift, Robust Task Inference Wins: Offline Imitation Learning with Behavior Foundation Models Revisited</h4>
           <p class="rpub__authors"><b>Rishabh Agrawal</b>, Rahul Jain, Ashutosh Nayyar</p>
-          <p class="rpub__venue"><span class="oral">NEW</span> Advances in Neural Information Processing Systems (NeurIPS) 2026</p>
+          <p class="rpub__venue">Advances in Neural Information Processing Systems (NeurIPS) 2026</p>
           <div class="rpub__links">
             <a class="chip" href="https://arxiv.org/pdf/2605.17017" target="_blank" rel="noopener">PAPER</a>
             <!--<a class="chip" href="https://arxiv.org/abs/2605.17017" target="_blank" rel="noopener">arXiv</a>-->
