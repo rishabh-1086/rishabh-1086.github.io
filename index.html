@@ -16,7 +16,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css?v=20260926b">
+
+<!-- Keep each company name and logo together in the About section. -->
+<style>
+.prose .org-inline {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.prose .org-inline > img.org-logo {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 0 0 0 0.2em;
+  vertical-align: -0.15em;
+  object-fit: contain;
+}
+</style>
 </head>
+
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
@@ -55,14 +73,19 @@
         <div class="socials">
           <a href="mailto:rishabha@usc.edu?subject=Hello%20Rishabh" aria-label="Email" title="Email">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+
           <a href="https://github.com/rishabh-1086" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5A10.5 10.5 0 0 0 8.7 22c.5.1.7-.2.7-.5v-1.7c-2.9.6-3.5-1.4-3.5-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.6 0-.6 0-.6 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.3-.3-4.7-1.2-4.7-5.1 0-1.1.4-2 1-2.7-.1-.3-.5-1.4.1-2.8 0 0 .9-.3 2.9 1a10 10 0 0 1 5.2 0c2-1.3 2.9-1 2.9-1 .6 1.4.2 2.5.1 2.8.7.7 1 1.6 1 2.7 0 3.9-2.4 4.8-4.7 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.5 10.5 0 0 0 12 1.5z"/></svg></a>
+
           <a href="https://scholar.google.com/citations?user=LSIA40MAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3z"/><path d="M5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.8-7-3.8z"/></svg></a>
+
           <a href="https://www.linkedin.com/in/rishabh-694/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2 3.76-2 4 0 4.74 2.6 4.74 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg></a>
+
           <a href="https://www.facebook.com/rishabh.agrawal.7/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.5-1.5h1.7V4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.7v8z"/></svg></a>
+
           <a href="https://www.instagram.com/__rishabh.agrawal__/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.7"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a>
         </div>
@@ -70,6 +93,7 @@
         <div class="btnrow">
           <a class="btn btn--solid" href="https://drive.google.com/file/d/1t9yt6mHF8fajQwYxOhbThs2W6skNO1nV/view?usp=sharing" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg> Curriculum&nbsp;Vitae</a>
+
           <a class="btn" href="mailto:rishabha@usc.edu?subject=Hello%20Rishabh">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Email</a>
         </div>
@@ -99,12 +123,24 @@
         <span class="section__rule"></span>
       </div>
 
-      <!-- <p class="lede reveal">I build reinforcement learning agents that learn good behavior from data alone — and hold up when the world they meet at deployment is not the world they trained in.</p>-->
+      <!-- <p class="lede reveal">I build reinforcement learning agents that learn good behavior from data alone — and hold up when the world they meet at deployment is not the world they trained in.</p> -->
 
       <div class="prose reveal">
         <p>I am a Ph.D. candidate in Electrical &amp; Computer Engineering at the <a href="https://www.usc.edu/" target="_blank" rel="noopener">University of Southern California</a>, where I completed master's degrees in both Computer Science and Electrical Engineering in May 2025. My research, advised by <a href="https://www.rahuljain.net/" target="_blank" rel="noopener">Prof. Rahul Jain</a> and <a href="https://sites.google.com/usc.edu/ashutosh" target="_blank" rel="noopener">Prof. Ashutosh Nayyar</a>, centers on reinforcement learning (RL), with a particular focus on offline and robust imitation learning, behavior foundation models, and post-training LLMs. I also collaborate closely with <a href="https://pariard.github.io/" target="_blank" rel="noopener">Prof. Paria Rashidinejad</a> on RL for LLMs research.</p>
 
-        <p>In May 2026, I joined <a>Google as a Student Researcher</a> <img class="org-logo" src="https://www.google.com/s2/favicons?domain=google.com&amp;sz=64" alt="" width="16" height="16" referrerpolicy="no-referrer">. In summer 2025, I was an <a>Applied Scientist intern at Amazon</a> <img class="org-logo" src="https://www.google.com/s2/favicons?domain=amazon.com&amp;sz=64" alt="" width="16" height="16" referrerpolicy="no-referrer">, working on reinforcement learning for agentic AI systems. Earlier, as a Research Engineer at <a>Samsung Research</a> <img class="org-logo" src="https://www.google.com/s2/favicons?domain=samsung.com&amp;sz=64" alt="" width="16" height="16" referrerpolicy="no-referrer">, I applied deep RL to network resource problems in the 6G Lab. As an undergraduate I worked with <a href="https://www.iitg.ac.in/iitg_faculty_details?name=Sriparna-Bandopadhyay&fac=dmw4ZEw0WTRZckRkMHl3OWs0QVRhQT09" target="_blank" rel="noopener">Prof. Sriparna Bandopadhyay</a> at IIT Guwahati on data augmentation with r-cyclic matrices.</p>
+        <p>
+          In May 2026, I joined
+          <a><span class="org-inline">Google<img class="org-logo" src="https://www.google.com/s2/favicons?domain=google.com&amp;sz=64" alt="" width="16" height="16" referrerpolicy="no-referrer"></span> as a Student Researcher</a>.
+          In summer 2025, I was an
+          <a>Applied Scientist intern at <span class="org-inline">Amazon<img class="org-logo" src="https://www.google.com/s2/favicons?domain=amazon.com&amp;sz=64" alt="" width="16" height="16" referrerpolicy="no-referrer"></span></a>,
+          working on reinforcement learning for agentic AI systems.
+          Earlier, as a Research Engineer at
+          <a><span class="org-inline">Samsung Research<img class="org-logo" src="https://www.google.com/s2/favicons?domain=samsung.com&amp;sz=64" alt="" width="16" height="16" referrerpolicy="no-referrer"></span></a>,
+          I applied deep RL to network resource problems in the 6G Lab.
+          As an undergraduate I worked with
+          <a href="https://www.iitg.ac.in/iitg_faculty_details?name=Sriparna-Bandopadhyay&fac=dmw4ZEw0WTRZckRkMHl3OWs0QVRhQT09" target="_blank" rel="noopener">Prof. Sriparna Bandopadhyay</a>
+          at IIT Guwahati on data augmentation with r-cyclic matrices.
+        </p>
 
         <p>Before that, I spent summer 2018 with <a href="https://dept.aem.umn.edu/~james/research/home.html" target="_blank" rel="noopener">Prof. Richard James</a> at the <a href="https://twin-cities.umn.edu/" target="_blank" rel="noopener">University of Minnesota</a> modeling light-induced phase transitions, and summer 2017 with <a href="https://scholar.google.com/citations?user=ewEU2vQAAAAJ&hl=en" target="_blank" rel="noopener">Prof. Frank Chung-Hoon Rhee</a> at <a href="https://www.hanyang.ac.kr/web/eng/" target="_blank" rel="noopener">Hanyang University</a>, estimating the fuzzifier parameter for alpha-planes of general type-2 fuzzy sets.</p>
       </div>
@@ -129,7 +165,9 @@
       <div class="pubgrid">
 
         <article class="pub reveal">
-          <div class="pub__media fig"><img src="images/research/AdviSD_Overview.png" alt="AdviSD: an advisor model learns to advise a frontier LLM via targeted multi-turn self-distillation" loading="lazy"></div>
+          <div class="pub__media fig">
+            <img src="images/research/AdviSD_Overview.png" alt="AdviSD: an advisor model learns to advise a frontier LLM via targeted multi-turn self-distillation" loading="lazy">
+          </div>
           <div class="pub__body">
             <h3 class="pub__title">AdviSD: Learning to Advise Frontier LLMs via Targeted Multi-Turn Self-Distillation</h3>
             <p class="pub__authors"><b>Rishabh Agrawal</b>, Hejie Cui, Shasha Li, Shanchan Wu, Sercan Ö. Arık</p>
@@ -145,7 +183,9 @@
         </article>
 
         <article class="pub reveal">
-          <div class="pub__media fig"><img src="images/research/DistIL_Overview.png" alt="DistIL: distributional DAgger with future-aware credit assignment" loading="lazy"></div>
+          <div class="pub__media fig">
+            <img src="images/research/DistIL_Overview.png" alt="DistIL: distributional DAgger with future-aware credit assignment" loading="lazy">
+          </div>
           <div class="pub__body">
             <h3 class="pub__title">Reinforcement Learning from Rich Feedback with Distributional DAgger</h3>
             <p class="pub__authors"><b>Rishabh Agrawal</b>, Jacob Fein-Ashley, Paria Rashidinejad</p>
@@ -172,7 +212,9 @@
         </article>
 
         <article class="pub reveal">
-          <div class="pub__media fig"><img src="images/research/BFM_Overview.png" alt="RBFM: robust task inference under dynamics shift" loading="lazy"></div>
+          <div class="pub__media fig">
+            <img src="images/research/BFM_Overview.png" alt="RBFM: robust task inference under dynamics shift" loading="lazy">
+          </div>
           <div class="pub__body">
             <h3 class="pub__title">When Dynamics Shift, Robust Task Inference Wins: Offline Imitation Learning with Behavior Foundation Models Revisited</h3>
             <p class="pub__authors"><b>Rishabh Agrawal</b>, Rahul Jain, Ashutosh Nayyar</p>
@@ -188,7 +230,9 @@
         </article>
 
         <article class="pub reveal">
-          <div class="pub__media fig"><img src="images/research/bedroil.png" alt="BE-DROIL method overview" loading="lazy"></div>
+          <div class="pub__media fig">
+            <img src="images/research/bedroil.png" alt="BE-DROIL method overview" loading="lazy">
+          </div>
           <div class="pub__body">
             <h3 class="pub__title">Balance Equation-based Distributionally Robust Offline Imitation Learning</h3>
             <p class="pub__authors"><b>Rishabh Agrawal</b>, Yusuf Alvi, Rahul Jain, Ashutosh Nayyar</p>
@@ -211,7 +255,9 @@
         </article>
 
         <article class="pub reveal">
-          <div class="pub__media"><video src="videos/HalfCheetah_video.mp4" poster="images/posters/HalfCheetah_video.jpg" muted loop autoplay playsinline preload="metadata"></video></div>
+          <div class="pub__media">
+            <video src="videos/HalfCheetah_video.mp4" poster="images/posters/HalfCheetah_video.jpg" muted loop autoplay playsinline preload="metadata"></video>
+          </div>
           <div class="pub__body">
             <h3 class="pub__title">Markov Balance Satisfaction Improves Performance in Strictly Batch Offline Imitation Learning</h3>
             <p class="pub__authors"><b>Rishabh Agrawal</b>, Nathan Dahlin, Rahul Jain, Ashutosh Nayyar</p>
@@ -229,7 +275,8 @@
       </div>
 
       <a class="seemore" href="research.html">View all publications, patents &amp; projects
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </section>
 
     <!-- News -->
@@ -243,30 +290,127 @@
       <div class="news-wrap reveal">
         <div class="news-scroll" tabindex="0" role="region" aria-label="News timeline, scrollable">
           <ol class="timeline">
-            <li class="tl is-star"><div class="tl__date">Sep 2026</div><div class="tl__body">Our paper “<a href="https://arxiv.org/pdf/2609.38142" target="_blank" rel="noopener">AdviSD: Learning to Advise Frontier LLMs via Targeted Multi-Turn Self-Distillation</a>”, from my Student Researcher work at <span class="org"><span class="mark">Google</span> <span class="org-logo-fill"><img class="org-logo" src="https://www.google.com/s2/favicons?domain=google.com&amp;sz=64" alt="" width="16" height="16" referrerpolicy="no-referrer"></span>,</span> is out on arXiv.</div></li>
-            <li class="tl is-star"><div class="tl__date">Sep 2026</div><div class="tl__body">Our paper “<a href="https://arxiv.org/pdf/2606.05152" target="_blank" rel="noopener">Reinforcement Learning from Rich Feedback with Distributional DAgger</a>” was accepted to <span class="mark">NeurIPS 2026</span>.</div></li>
-            <li class="tl is-star"><div class="tl__date">Sep 2026</div><div class="tl__body">Our paper “<a href="https://arxiv.org/pdf/2605.17017" target="_blank" rel="noopener">When Dynamics Shift, Robust Task Inference Wins: Offline Imitation Learning with Behavior Foundation Models Revisited</a>” was accepted to <span class="mark">NeurIPS 2026</span>.</div></li>
-            <li class="tl is-star"><div class="tl__date">May 2026</div><div class="tl__body">Started as a <span class="mark">Student Researcher</span> at <span class="org"><span class="mark">Google</span> <span class="org-logo-fill"><img class="org-logo" src="https://www.google.com/s2/favicons?domain=google.com&amp;sz=64" alt="" width="16" height="16" referrerpolicy="no-referrer"></span>.</span></div></li>
-            <li class="tl is-star"><div class="tl__date">Jan 2026</div><div class="tl__body">Our paper “<a href="https://arxiv.org/pdf/2511.07942" target="_blank" rel="noopener">Balance Equation-based Distributionally Robust Offline Imitation Learning</a>” was accepted to <span class="mark">L4DC 2026</span>.</div></li>
-            <li class="tl is-star"><div class="tl__date">Nov 2025</div><div class="tl__body">Passed my Ph.D. Qualifying Exam, <span class="mark">officially a Ph.D. Candidate</span>!</div></li>
-            <li class="tl"><div class="tl__date">Nov 2025</div><div class="tl__body">Selected for the AAAI 2026 Doctoral Consortium in Singapore.</div></li>
-            <li class="tl is-star"><div class="tl__date">Nov 2025</div><div class="tl__body">Our paper “<a href="https://arxiv.org/pdf/2511.07942" target="_blank" rel="noopener">Balance Equation-based Distributionally Robust Offline Imitation Learning</a>” was accepted to the NeurIPS 2025 E-SARS Workshop for an <span class="mark">oral presentation</span>.</div></li>
-            <li class="tl"><div class="tl__date">May 2025</div><div class="tl__body">Started as an <span class="mark">Applied Scientist Intern</span> at <span class="org"><span class="mark">Amazon</span> <img class="org-logo" src="https://www.google.com/s2/favicons?domain=amazon.com&amp;sz=64" alt="" width="16" height="16" referrerpolicy="no-referrer">.</span></div></li>
-            <li class="tl"><div class="tl__date">May 2025</div><div class="tl__body">Awarded <span class="mark">two M.S. degrees</span> in Computer Science and Electrical Engineering at USC.</div></li>
-            <li class="tl"><div class="tl__date">Apr 2025</div><div class="tl__body">Gave a talk on offline imitation learning at the 45th SoCal Control Workshop, UC San Diego.</div></li>
-            <li class="tl"><div class="tl__date">Feb 2025</div><div class="tl__body">Our paper “<a href="https://proceedings.mlr.press/v283/agrawal25a.html" target="_blank" rel="noopener">Conditional Kernel Imitation Learning for Continuous State Environments</a>” was accepted to L4DC 2025.</div></li>
-            <li class="tl"><div class="tl__date">Dec 2024</div><div class="tl__body">Our paper “<a href="https://arxiv.org/pdf/2408.09125" target="_blank" rel="noopener">Markov Balance Satisfaction Improves Performance in Strictly Batch Offline Imitation Learning</a>” was accepted to AAAI 2025.</div></li>
-            <li class="tl is-star"><div class="tl__date">Nov 2024</div><div class="tl__body">Received the <span class="mark">Outstanding Poster Award</span> at USC's 14th Annual Research Festival.</div></li>
-            <li class="tl"><div class="tl__date">Sep 2024</div><div class="tl__body">Our paper “<a href="https://opt-ml.org/papers/2024/paper84.pdf" target="_blank" rel="noopener">Policy Optimization for Strictly Batch Imitation Learning</a>” was accepted to the Workshop on Optimization for Machine Learning at NeurIPS 2024.</div></li>
-            <li class="tl"><div class="tl__date">Dec 2022</div><div class="tl__body">Patent on “<a href="https://patents.google.com/patent/US11523411B2/en/" target="_blank" rel="noopener">Method and System for Radio-Resource Scheduling in Telecommunication Network</a>” granted.</div></li>
-            <li class="tl"><div class="tl__date">Jan 2022</div><div class="tl__body">Started my Ph.D. at USC with a broad focus on reinforcement learning.</div></li>
-            <li class="tl"><div class="tl__date">Aug 2020</div><div class="tl__body">Our paper “<a href="https://ieeexplore.ieee.org/document/9322182" target="_blank" rel="noopener">A Reinforcement Learning Framework for QoS-Driven Radio Resource Scheduler</a>” was accepted to IEEE Globecom 2020.</div></li>
-            <li class="tl"><div class="tl__date">Jun 2019</div><div class="tl__body">Joined <span class="org"><span class="mark">Samsung Research</span> <img class="org-logo" src="https://www.google.com/s2/favicons?domain=samsung.com&amp;sz=64" alt="" width="16" height="16" referrerpolicy="no-referrer"></span> as a <span class="mark">Research Engineer</span> in the 6G Lab.</div></li>
-            <li class="tl"><div class="tl__date">May 2019</div><div class="tl__body">Graduated from IIT Guwahati with a B.Tech in Mathematics &amp; Computing.</div></li>
-            <li class="tl"><div class="tl__date">May 2018</div><div class="tl__body">Started a summer research internship at the University of Minnesota, Twin Cities.</div></li>
-            <li class="tl"><div class="tl__date">Mar 2018</div><div class="tl__body">Our paper “<a href="https://ieeexplore.ieee.org/document/8491556" target="_blank" rel="noopener">Determining the Optimal Fuzzifier Range for Alpha-Planes of General Type-2 Fuzzy Sets</a>” was accepted to FUZZ-IEEE 2018.</div></li>
-            <li class="tl"><div class="tl__date">May 2017</div><div class="tl__body">Started a summer research internship at Hanyang University, South Korea.</div></li>
-            <li class="tl"><div class="tl__date">Jul 2015</div><div class="tl__body">Started undergraduate studies at IIT Guwahati (Mathematics, CS &amp; Financial Engineering).</div></li>
+
+            <li class="tl is-star">
+              <div class="tl__date">Sep 2026</div>
+              <div class="tl__body">Our paper “<a href="https://arxiv.org/pdf/2609.38142" target="_blank" rel="noopener">AdviSD: Learning to Advise Frontier LLMs via Targeted Multi-Turn Self-Distillation</a>”, from my Student Researcher work at <span class="org"><span class="mark">Google</span> <span class="org-logo-fill"><img class="org-logo" src="https://www.google.com/s2/favicons?domain=google.com&amp;sz=64" alt="" width="16" height="16" referrerpolicy="no-referrer"></span>,</span> is out on arXiv.</div>
+            </li>
+
+            <li class="tl is-star">
+              <div class="tl__date">Sep 2026</div>
+              <div class="tl__body">Our paper “<a href="https://arxiv.org/pdf/2606.05152" target="_blank" rel="noopener">Reinforcement Learning from Rich Feedback with Distributional DAgger</a>” was accepted to <span class="mark">NeurIPS 2026</span>.</div>
+            </li>
+
+            <li class="tl is-star">
+              <div class="tl__date">Sep 2026</div>
+              <div class="tl__body">Our paper “<a href="https://arxiv.org/pdf/2605.17017" target="_blank" rel="noopener">When Dynamics Shift, Robust Task Inference Wins: Offline Imitation Learning with Behavior Foundation Models Revisited</a>” was accepted to <span class="mark">NeurIPS 2026</span>.</div>
+            </li>
+
+            <li class="tl is-star">
+              <div class="tl__date">May 2026</div>
+              <div class="tl__body">Started as a <span class="mark">Student Researcher</span> at <span class="org"><span class="mark">Google</span> <span class="org-logo-fill"><img class="org-logo" src="https://www.google.com/s2/favicons?domain=google.com&amp;sz=64" alt="" width="16" height="16" referrerpolicy="no-referrer"></span>.</span></div>
+            </li>
+
+            <li class="tl is-star">
+              <div class="tl__date">Jan 2026</div>
+              <div class="tl__body">Our paper “<a href="https://arxiv.org/pdf/2511.07942" target="_blank" rel="noopener">Balance Equation-based Distributionally Robust Offline Imitation Learning</a>” was accepted to <span class="mark">L4DC 2026</span>.</div>
+            </li>
+
+            <li class="tl is-star">
+              <div class="tl__date">Nov 2025</div>
+              <div class="tl__body">Passed my Ph.D. Qualifying Exam, <span class="mark">officially a Ph.D. Candidate</span>!</div>
+            </li>
+
+            <li class="tl">
+              <div class="tl__date">Nov 2025</div>
+              <div class="tl__body">Selected for the AAAI 2026 Doctoral Consortium in Singapore.</div>
+            </li>
+
+            <li class="tl is-star">
+              <div class="tl__date">Nov 2025</div>
+              <div class="tl__body">Our paper “<a href="https://arxiv.org/pdf/2511.07942" target="_blank" rel="noopener">Balance Equation-based Distributionally Robust Offline Imitation Learning</a>” was accepted to the NeurIPS 2025 E-SARS Workshop for an <span class="mark">oral presentation</span>.</div>
+            </li>
+
+            <li class="tl">
+              <div class="tl__date">May 2025</div>
+              <div class="tl__body">Started as an <span class="mark">Applied Scientist Intern</span> at <span class="org"><span class="mark">Amazon</span> <img class="org-logo" src="https://www.google.com/s2/favicons?domain=amazon.com&amp;sz=64" alt="" width="16" height="16" referrerpolicy="no-referrer">.</span></div>
+            </li>
+
+            <li class="tl">
+              <div class="tl__date">May 2025</div>
+              <div class="tl__body">Awarded <span class="mark">two M.S. degrees</span> in Computer Science and Electrical Engineering at USC.</div>
+            </li>
+
+            <li class="tl">
+              <div class="tl__date">Apr 2025</div>
+              <div class="tl__body">Gave a talk on offline imitation learning at the 45th SoCal Control Workshop, UC San Diego.</div>
+            </li>
+
+            <li class="tl">
+              <div class="tl__date">Feb 2025</div>
+              <div class="tl__body">Our paper “<a href="https://proceedings.mlr.press/v283/agrawal25a.html" target="_blank" rel="noopener">Conditional Kernel Imitation Learning for Continuous State Environments</a>” was accepted to L4DC 2025.</div>
+            </li>
+
+            <li class="tl">
+              <div class="tl__date">Dec 2024</div>
+              <div class="tl__body">Our paper “<a href="https://arxiv.org/pdf/2408.09125" target="_blank" rel="noopener">Markov Balance Satisfaction Improves Performance in Strictly Batch Offline Imitation Learning</a>” was accepted to AAAI 2025.</div>
+            </li>
+
+            <li class="tl is-star">
+              <div class="tl__date">Nov 2024</div>
+              <div class="tl__body">Received the <span class="mark">Outstanding Poster Award</span> at USC's 14th Annual Research Festival.</div>
+            </li>
+
+            <li class="tl">
+              <div class="tl__date">Sep 2024</div>
+              <div class="tl__body">Our paper “<a href="https://opt-ml.org/papers/2024/paper84.pdf" target="_blank" rel="noopener">Policy Optimization for Strictly Batch Imitation Learning</a>” was accepted to the Workshop on Optimization for Machine Learning at NeurIPS 2024.</div>
+            </li>
+
+            <li class="tl">
+              <div class="tl__date">Dec 2022</div>
+              <div class="tl__body">Patent on “<a href="https://patents.google.com/patent/US11523411B2/en/" target="_blank" rel="noopener">Method and System for Radio-Resource Scheduling in Telecommunication Network</a>” granted.</div>
+            </li>
+
+            <li class="tl">
+              <div class="tl__date">Jan 2022</div>
+              <div class="tl__body">Started my Ph.D. at USC with a broad focus on reinforcement learning.</div>
+            </li>
+
+            <li class="tl">
+              <div class="tl__date">Aug 2020</div>
+              <div class="tl__body">Our paper “<a href="https://ieeexplore.ieee.org/document/9322182" target="_blank" rel="noopener">A Reinforcement Learning Framework for QoS-Driven Radio Resource Scheduler</a>” was accepted to IEEE Globecom 2020.</div>
+            </li>
+
+            <li class="tl">
+              <div class="tl__date">Jun 2019</div>
+              <div class="tl__body">Joined <span class="org"><span class="mark">Samsung Research</span> <img class="org-logo" src="https://www.google.com/s2/favicons?domain=samsung.com&amp;sz=64" alt="" width="16" height="16" referrerpolicy="no-referrer"></span> as a <span class="mark">Research Engineer</span> in the 6G Lab.</div>
+            </li>
+
+            <li class="tl">
+              <div class="tl__date">May 2019</div>
+              <div class="tl__body">Graduated from IIT Guwahati with a B.Tech in Mathematics &amp; Computing.</div>
+            </li>
+
+            <li class="tl">
+              <div class="tl__date">May 2018</div>
+              <div class="tl__body">Started a summer research internship at the University of Minnesota, Twin Cities.</div>
+            </li>
+
+            <li class="tl">
+              <div class="tl__date">Mar 2018</div>
+              <div class="tl__body">Our paper “<a href="https://ieeexplore.ieee.org/document/8491556" target="_blank" rel="noopener">Determining the Optimal Fuzzifier Range for Alpha-Planes of General Type-2 Fuzzy Sets</a>” was accepted to FUZZ-IEEE 2018.</div>
+            </li>
+
+            <li class="tl">
+              <div class="tl__date">May 2017</div>
+              <div class="tl__body">Started a summer research internship at Hanyang University, South Korea.</div>
+            </li>
+
+            <li class="tl">
+              <div class="tl__date">Jul 2015</div>
+              <div class="tl__body">Started undergraduate studies at IIT Guwahati (Mathematics, CS &amp; Financial Engineering).</div>
+            </li>
+
           </ol>
         </div>
       </div>
@@ -285,13 +429,22 @@
 
       <div class="contact-card reveal">
         <div class="contact-row">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          </span>
           <div style="flex:1; min-width:0">
             <div class="lbl">Email</div>
             <div class="emails">
-              <button class="email-copy" type="button" data-copy="rishabha@usc.edu"><span class="addr">rishabha@usc.edu</span><span class="copy-hint">Copy</span></button>
-              <button class="email-copy" type="button" data-copy="rishabh.agrawal694@gmail.com"><span class="addr">rishabh.agrawal694@gmail.com</span><span class="copy-hint">Copy</span></button>
+              <button class="email-copy" type="button" data-copy="rishabha@usc.edu">
+                <span class="addr">rishabha@usc.edu</span>
+                <span class="copy-hint">Copy</span>
+              </button>
+              <button class="email-copy" type="button" data-copy="rishabh.agrawal694@gmail.com">
+                <span class="addr">rishabh.agrawal694@gmail.com</span>
+                <span class="copy-hint">Copy</span>
+              </button>
             </div>
+
             <!--
             <div class="contact-actions">
               <a class="cbtn" href="mailto:rishabha@usc.edu?subject=Hello%20Rishabh">
@@ -302,8 +455,11 @@
             -->
           </div>
         </div>
+
         <div class="contact-row">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
           <div>
             <div class="lbl">Office</div>
             <div class="val">335 Hughes Aircraft Electrical Engineering Center<br>3740 McClintock Ave, Los Angeles, CA 90089</div>
