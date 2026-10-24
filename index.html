@@ -48,16 +48,6 @@
   gap: 20px;
 }
 
-/* Reduce space between Samsung Research and About */
-.sidebar-profile + .nav {
-  margin-top: -5px;
-}
-
-/* Reduce space between Experience and the social icons */
-.side .nav + .connect {
-  margin-top: -5px;
-}
-
 .sidebar-profile {
   display: grid;
   gap: 19px;
@@ -290,6 +280,50 @@
     font-size: 12px;
   }
 }
+
+/* Compact navigation, visually separate from industry affiliations. */
+.side .nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3px;
+  margin-top: -5px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper-2);
+}
+
+.side .nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 34px;
+  padding: 8px 5px;
+  border-radius: 6px;
+  font: 500 12px/1.2 var(--sans);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.side .nav a .idx {
+  display: none;
+}
+
+.side .nav a[aria-current="page"] {
+  background: var(--card);
+  color: var(--accent);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.side .nav a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.side .nav + .connect {
+  margin-top: -5px;
+}
 </style>
 </head>
 
@@ -466,6 +500,28 @@
 
       <!-- Social profiles and contact -->
       <div class="connect">
+        <div class="btnrow">
+          <a
+            class="btn btn--solid"
+            href="https://drive.google.com/file/d/1t9yt6mHF8fajQwYxOhbThs2W6skNO1nV/view?usp=sharing"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/>
+            </svg>
+            Curriculum&nbsp;Vitae
+          </a>
+
+          <a class="btn" href="mailto:rishabha@usc.edu?subject=Hello%20Rishabh">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="3" y="5" width="18" height="14" rx="2"/>
+              <path d="m3 7 9 6 9-6"/>
+            </svg>
+            Email
+          </a>
+        </div>
+
         <div class="socials">
 
           <a
@@ -542,28 +598,6 @@
             </svg>
           </a>
 
-        </div>
-
-        <div class="btnrow">
-          <a
-            class="btn btn--solid"
-            href="https://drive.google.com/file/d/1t9yt6mHF8fajQwYxOhbThs2W6skNO1nV/view?usp=sharing"
-            target="_blank"
-            rel="noopener"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/>
-            </svg>
-            Curriculum&nbsp;Vitae
-          </a>
-
-          <a class="btn" href="mailto:rishabha@usc.edu?subject=Hello%20Rishabh">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-              <rect x="3" y="5" width="18" height="14" rx="2"/>
-              <path d="m3 7 9 6 9-6"/>
-            </svg>
-            Email
-          </a>
         </div>
       </div>
 
